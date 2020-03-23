@@ -1,0 +1,8 @@
+Arcade,790,5,cyan,80
+Menu,870,105,cyan,70
+Player name :,300,300,white,50
+NCurse,300,500,pink,50
+OpenGl,900,500,pink,50
+SFML,1460,500,pink,50
+Pacman,890,600,pink,50
+Nibbler,890,700,pink,50
