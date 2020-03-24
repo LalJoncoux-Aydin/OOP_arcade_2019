@@ -22,26 +22,27 @@ bool arcade(char *lib_name)
     while (_running == true) {
 
         int key = graphical_t->getKey();
-        // Change lib
+        // Select and change lib
         if (key == 5 || key == 6) {
             if ((graphical_t = changeLib(graphical_t, key)) == NULL)
                 throw openLibFail();
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
         }
-        // Select game
+        // Select and change game
         if (key == 1 || key == 2 || key == 10 || key == 3) {
             if (game_t->getId() == 0) {
                 game_t->changeSelection(key);
             }
             if (game_t->getId() != 0 || key == 10 || key == 3) {
-                std::cout << "enter" << std::endl;
-                graphical_t->cleanScreen();
-                // if ((game_t = initGame(game_t, (char *)games_path[key].c_str())) == NULL)
-                //     throw openLibFail();
+                int new_id = game_t->getId() == 1 ? 2 : 1;
+                if ((game_t = initGame(game_t, (char *)games_path[new_id].c_str())) == NULL)
+                     throw openLibFail();
             }
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
+
+            // displayHero()
         }
         // Write name
         if (key == 11) {
@@ -67,5 +68,6 @@ bool arcade(char *lib_name)
 
     graphical_t->closeWindow();
     dlclose(graphical_t->getLibPtr());
+    dlclose(game_t->getLibPtr());
     return true;
 }

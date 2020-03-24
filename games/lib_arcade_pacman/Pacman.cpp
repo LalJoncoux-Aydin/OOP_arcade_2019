@@ -3,6 +3,7 @@
 Pacman::Pacman()
 {
     // Construct map
+    std::cout << "construct" << std::endl;
 }
 
 std::vector<std::string> Pacman::readSceneFile()

@@ -12,6 +12,9 @@
 #include <iostream>
 #include <fstream>
 
+#include "Player.hpp"
+#include "Objects.hpp"
+#include "Ennemies.hpp"
 #include "arcade_exception.hpp"
 
 class IGames {
@@ -28,7 +31,14 @@ class IGames {
 
         virtual ~IGames() = default;
     protected:
+        void *_lib_ptr;
+
         std::vector<std::string> config_file;
+        std::vector<std::string> _map;
+
+        Player *_player;
+        Ennemies *_ennemies;
+        Objects *_objects;
 };
 
 #endif /* !IGAMES_HPP_ */
