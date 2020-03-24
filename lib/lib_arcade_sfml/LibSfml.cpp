@@ -119,6 +119,7 @@ bool LibSfml::drawText(std::string _name, int pos_x, int pos_y, std::string _col
         return false;
     }
     _window.draw(_playerImage);
+    _window.draw(_text);
     return true;
 };
 
