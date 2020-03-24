@@ -2,7 +2,12 @@
 
 Nibbler::Nibbler()
 {
-
+    // Construct map
+    for(size_t i = 0; i < config_file.size(); i++) {
+        if (config_file[i].at(0) == '2') {
+            std::cout << config_file[i] << std::endl;
+        }
+    }
 }
 
 std::vector<std::string> Nibbler::readSceneFile()

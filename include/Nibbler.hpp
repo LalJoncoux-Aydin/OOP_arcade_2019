@@ -13,6 +13,9 @@
 
 // Local libs
 #include "IGames.hpp"
+#include "Player.hpp"
+#include "Objects.hpp"
+#include "Ennemies.hpp"
 
 class Nibbler: public IGames {
     public:
@@ -37,7 +40,12 @@ class Nibbler: public IGames {
         ~Nibbler() = default;
     private:
         void *_lib_ptr;
+
         std::string config_path = "./games/lib_arcade_nibbler/.nibbler";
+        std::vector<std::string> _map;
+        Player _player;
+        Ennemies _ennemies;
+        Objects _objects;
 };
 
 extern "C" IGames *createGame();

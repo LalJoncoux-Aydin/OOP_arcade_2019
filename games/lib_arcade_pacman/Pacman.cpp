@@ -2,7 +2,7 @@
 
 Pacman::Pacman()
 {
-
+    // Construct map
 }
 
 std::vector<std::string> Pacman::readSceneFile()

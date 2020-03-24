@@ -30,14 +30,15 @@ bool arcade(char *lib_name)
                 return false;
         }
         // Select game
-        if (key == 1 || key == 2) {
+        if (key == 1 || key == 2 || key == 10 || key == 3) {
             if (game_t->getId() == 0) {
                 game_t->changeSelection(key);
-            } else if (game_t->getId() != 0 || key == 10 || key == 3) {
+            }
+            if (game_t->getId() != 0 || key == 10 || key == 3) {
+                std::cout << "enter" << std::endl;
                 graphical_t->cleanScreen();
-                //
-                //       if ((game_t = initGame(game_t, (char *)games_path[key].c_str())) == NULL)
-                //          throw openLibFail();
+                // if ((game_t = initGame(game_t, (char *)games_path[key].c_str())) == NULL)
+                //     throw openLibFail();
             }
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;

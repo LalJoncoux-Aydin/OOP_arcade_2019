@@ -1,17 +1,17 @@
 #include "Player.hpp"
 
-Player::Player {
+Player::Player() {
 
 }
 
-Player::pickObject() {
+void Player::pickObject() {
 
 }
 
-Player::getDamage() {
+void Player::getDamage() {
 
 }
 
 Player::~Player() {
-    
+
 }

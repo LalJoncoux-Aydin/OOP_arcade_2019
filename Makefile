@@ -16,6 +16,8 @@ RM	?=	rm -f
 SRC	=	arcade.cpp			\
 		initLib.cpp			\
 		changeLib.cpp		\
+		Player.cpp 			\
+		Ennemies.cpp		\
 		main.cpp			\
 
 SRC_FILE	=	$(addprefix ./src/, $(SRC))
