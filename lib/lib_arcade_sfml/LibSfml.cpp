@@ -163,6 +163,18 @@ int LibSfml::getKey()
                 closeWindow();
                 return 84;
             }
+            if (_Event.key.code == sf::Keyboard::Left) {
+                return 12;
+            }
+            if (_Event.key.code == sf::Keyboard::Down) {
+                return 14;
+            }
+            if (_Event.key.code == sf::Keyboard::Right) {
+                return 15;
+            }
+            if (_Event.key.code == sf::Keyboard::Up) {
+                return 13;
+            }
         }
 
         //     //EFFECTS ON BUTTON

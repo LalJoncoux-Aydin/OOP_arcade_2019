@@ -99,6 +99,14 @@ int LibNcurse::getKey()
         return 6;
     if (ch == KEY_F(12))
         return 84;
+    if (ch == KEY_LEFT)
+        return 12;
+    if (ch == KEY_UP)
+        return 13;
+    if (ch == KEY_DOWN)
+        return 14;
+    if (ch == KEY_RIGHT)
+        return 15;
     return 0;
 }
 

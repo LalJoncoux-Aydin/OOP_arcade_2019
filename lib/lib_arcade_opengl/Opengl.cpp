@@ -135,6 +135,14 @@ int LibOpengl::getKey()
             if (event.key.code == sf::Keyboard::F6) {
                 return 6;
             }
+            if (event.key.code == sf::Keyboard::Left)
+                return 12;
+            if (event.key.code == sf::Keyboard::Right)
+                return 15;
+            if (event.key.code == sf::Keyboard::Down)
+                return 14;
+            if (event.key.code == sf::Keyboard::Up)
+                return 13;
             if (event.key.code == sf::Keyboard::F7)
                 return 2;
             if (event.key.code == sf::Keyboard::F8)
