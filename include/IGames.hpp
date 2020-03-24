@@ -14,13 +14,15 @@
 
 class IGames {
     public:
-        virtual int startGame() = 0;
         virtual std::vector<std::string> readSceneFile() = 0;
         virtual void changeSelection(int selected) = 0;
 
+        // Getters
         virtual void *getLibPtr() = 0;
-        virtual void setLibPtr(void * new_lib) = 0;
         virtual int getId() = 0;
+
+        // Setters
+        virtual void setLibPtr(void * new_lib) = 0;
 
         virtual ~IGames() = default;
     protected:

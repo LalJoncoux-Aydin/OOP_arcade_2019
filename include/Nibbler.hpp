@@ -19,23 +19,24 @@ class Nibbler: public IGames {
         Nibbler();
 
         virtual std::vector<std::string> readSceneFile();
-        virtual int startGame();
         virtual void changeSelection(int selected) {};
 
+        // Getters
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
+        virtual int getId() {
+            return 2;
+        };
+
+        // Setters
         virtual void setLibPtr(void *new_lib) {
             _lib_ptr = (void *) new_lib;
-        };
-        virtual int getId() {
-            return _id;
         };
 
         ~Nibbler() = default;
     private:
         void *_lib_ptr;
-        int _id = 2;
         std::string config_path = "./games/lib_arcade_nibbler/.nibbler";
 };
 

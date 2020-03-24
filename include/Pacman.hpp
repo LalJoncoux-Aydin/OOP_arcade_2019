@@ -19,23 +19,25 @@ class Pacman: public IGames {
         Pacman();
 
         virtual std::vector<std::string> readSceneFile();
-        virtual int startGame();
         virtual void changeSelection(int selected) {};
 
+        // Getters
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
+        virtual int getId() {
+            return 1;
+        };
+
+        // Setters
         virtual void setLibPtr(void *new_lib) {
             _lib_ptr = (void *) new_lib;
-        };
-        virtual int getId() {
-            return _id;
         };
 
         ~Pacman() = default;
     private:
         void *_lib_ptr;
-        int _id = 1;
+
         std::string config_path = "./games/lib_arcade_pacman/.pacman";
 };
 
