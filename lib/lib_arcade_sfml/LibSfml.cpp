@@ -150,18 +150,30 @@ int LibSfml::getKey()
 
 
         if (_Event.type == sf::Event::KeyPressed) {
-            if (_Event.key.code == sf::Keyboard::F5) {
+            if (_Event.key.code == sf::Keyboard::F1) {
                 closeWindow();
-                return 5;
+                return 1;
             }
-            if (_Event.key.code == sf::Keyboard::F6) {
+            if (_Event.key.code == sf::Keyboard::F2) {
                 closeWindow();
-                return 6;
+                return 2;
             }
             if (_Event.key.code == sf::Keyboard::F12) {
     //            sound.stop();
                 closeWindow();
                 return 84;
+            }
+            if (_Event.key.code == sf::Keyboard::F3) {
+                return 3;
+            }
+            if (_Event.key.code == sf::Keyboard::F4) {
+                return 4;
+            }
+            if (_Event.key.code == sf::Keyboard::F5) {
+                return 5;
+            }
+            if (_Event.key.code == sf::Keyboard::F6) {
+                return 6;
             }
             if (_Event.key.code == sf::Keyboard::Left) {
                 return 12;
