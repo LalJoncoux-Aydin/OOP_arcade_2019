@@ -99,7 +99,7 @@ class LibSfml: public IGraphic
         };
 
   private:
-      int _state;
+      int _state = 0;
       void *_lib_ptr;
 };
 

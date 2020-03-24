@@ -18,7 +18,9 @@ bool arcade(char *lib_name)
     }
     if (graphical_t->displayScene(game_t->readSceneFile()) == false)
         return false;
+
     while (_running == true) {
+
         int key = graphical_t->getKey();
         // Change lib
         if (key == 5 || key == 6) {
@@ -27,17 +29,16 @@ bool arcade(char *lib_name)
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
         }
-        // Exit
-        if (key == 84)
-            _running = false;
         // Select game
-        if (key == 1) {
-            game_t->changeSelection(1);
-            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-                return false;
-        }
-        if (key == 2) {
-            game_t->changeSelection(2);
+        if (key == 1 || key == 2) {
+            if (game_t->getId() == 0) {
+                game_t->changeSelection(key);
+            } else if (game_t->getId() != 0 || key == 10 || key == 3) {
+                graphical_t->cleanScreen();
+                //
+                //       if ((game_t = initGame(game_t, (char *)games_path[graphical_t->getState()].c_str())) == NULL)
+                //          throw openLibFail();
+            }
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
         }
@@ -46,36 +47,21 @@ bool arcade(char *lib_name)
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
         }
-
-        // // init game or restart
-        // if (key == 10 || key == 3) {
-        //   if (graphical_t->getState() == 1 || graphical_t->getState() == 2) {
-        //       // Clear the window
-        //       graphical_t->cleanScreen();
-        //
-        //       if ((game_t = initGame(game_t, (char *)games_path[graphical_t->getState()].c_str())) == NULL)
-        //          throw openLibFail();
-        //
-        //       // Display map
-        //       if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-        //          return false;
-        //   }
-        // }
         // Menu
-        // if (key == 4) {
-        //      if ((game_t = initGame(game_t, (char *)games_path[0].c_str())) == NULL) {
-        //           throw openLibFail();
-        //           return false;
-        //      }
-        //      if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-        //           return false;
-        // }
-
-        // Change game
-        // if (key == 7 || key == 8)
-        //
+        if (key == 4) {
+            if ((game_t = initGame(game_t, (char *)games_path[0].c_str())) == NULL) {
+                throw openLibFail();
+                return false;
+            }
+            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+                return false;
+        }
 
         // Move caracter
+
+        // Exit
+        if (key == 84)
+            _running = false;
     }
 
     graphical_t->closeWindow();

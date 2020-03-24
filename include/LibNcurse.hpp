@@ -60,7 +60,7 @@ class LibNcurse: public IGraphic
       std::string games = "Games : Nibbler - Pacman";
       std::string highscore = "Highscore";
       std::string exit = "Exit";
-      int _state;
+      int _state = 0;
 };
 
 extern "C" IGraphic *createLib();
