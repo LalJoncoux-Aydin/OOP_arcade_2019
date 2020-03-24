@@ -18,15 +18,14 @@ class IGraphic {
         virtual void closeWindow() = 0;
 
         virtual bool displayScene(std::vector<std::string> config_scene) = 0;
-
         virtual void cleanScreen() = 0;
 
-        virtual int getKey() = 0;
-        virtual int getState() = 0;
-
         // Getters
+        virtual int getKey() = 0;
         virtual int getId() = 0;
         virtual void *getLibPtr() = 0;
+
+        // Setters
         virtual void setLibPtr(void * new_lib) = 0;
 
         virtual ~IGraphic() = default;

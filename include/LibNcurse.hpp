@@ -28,22 +28,20 @@ class LibNcurse: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-
         virtual void cleanScreen();
-        virtual bool drawText();
-        virtual bool drawMap();
+        bool drawText();
+        bool drawMap();
 
         // Getters
         virtual int getKey();
         virtual int getId() {
             return 0;
         };
-        virtual int getState() {
-            return _state;
-        };
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
+
+        //Setters
         virtual void setLibPtr(void *new_lib) {
             _lib_ptr = (void *) new_lib;
         };
@@ -60,7 +58,6 @@ class LibNcurse: public IGraphic
       std::string games = "Games : Nibbler - Pacman";
       std::string highscore = "Highscore";
       std::string exit = "Exit";
-      int _state = 0;
 };
 
 extern "C" IGraphic *createLib();

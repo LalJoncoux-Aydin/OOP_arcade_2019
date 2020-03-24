@@ -78,7 +78,6 @@ class LibSfml: public IGraphic
         // void check_mouse_pos(sf::Event::MouseMoveEvent const &mouse, sf::Text &text, bool isSelected);
         // void check_mouse_click(sf::Event const &event, sf::Text &text, bool &isSelected);
         virtual bool displayScene(std::vector<std::string> config_scene);
-
         virtual void cleanScreen();
         bool drawText();
         bool drawMap();
@@ -88,18 +87,16 @@ class LibSfml: public IGraphic
         virtual int getId() {
             return 2;
         };
-        virtual int getState() {
-            return _state;
-        };
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
+
+        // Setters
         virtual void setLibPtr(void *new_lib) {
             _lib_ptr = (void *) new_lib;
         };
 
   private:
-      int _state = 0;
       void *_lib_ptr;
 };
 

@@ -36,7 +36,7 @@ bool arcade(char *lib_name)
             } else if (game_t->getId() != 0 || key == 10 || key == 3) {
                 graphical_t->cleanScreen();
                 //
-                //       if ((game_t = initGame(game_t, (char *)games_path[graphical_t->getState()].c_str())) == NULL)
+                //       if ((game_t = initGame(game_t, (char *)games_path[key].c_str())) == NULL)
                 //          throw openLibFail();
             }
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
