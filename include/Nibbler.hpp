@@ -36,7 +36,7 @@ class Nibbler: public IGames {
 
         ~Nibbler() = default;
     private:
-        std::string config_path = "./games/lib_arcade_nibbler/.nibbler";
+        std::string config_path = "./games/lib_arcade_nibbler/nibbler.txt";
 };
 
 extern "C" IGames *createGame();

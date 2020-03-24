@@ -36,7 +36,7 @@ class Pacman: public IGames {
 
         ~Pacman() = default;
     private:
-        std::string config_path = "./games/lib_arcade_pacman/.pacman";
+        std::string config_path = "./games/lib_arcade_pacman/pacman.txt";
 };
 
 extern "C" IGames *createGame();

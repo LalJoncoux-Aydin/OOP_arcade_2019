@@ -37,9 +37,9 @@ class Menu: public IGames {
 
         ~Menu() = default;
     private:
-        std::string config_path = "./games/lib_menu/.menu";
-        std::string nibbler_select = "./games/lib_menu/.menu_nibbler";
-        std::string pacman_select = "./games/lib_menu/.menu_pacman";
+        std::string config_path = "./games/lib_menu/menu.txt";
+        std::string nibbler_select = "./games/lib_menu/menu_nibbler.txt";
+        std::string pacman_select = "./games/lib_menu/menu_pacman.txt";
 };
 
 extern "C" IGames *createGame();
