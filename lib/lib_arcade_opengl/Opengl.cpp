@@ -60,24 +60,54 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
         std::vector<std::string> l_command;
         std::stringstream s_stream(config_scene[i]);
         c = 0;
-        while(s_stream.good() && c != 5){
+        while(s_stream.good() && c != 6){
             std::string param;
 
             c++;
             getline(s_stream, param, ',');
             l_command.push_back(param);
         }
-        _text = l_command[0];
-        pos_x = std::stoi(l_command[1]);
-        pos_y = std::stoi(l_command[2]);
-        _color = l_command[3];
-        charSize = std::stoi(l_command[4]);
-        if (draw_text((char *)_text.c_str(), charSize, _color, pos_x, pos_y) == false)
-            return false;
+        if (l_command[0] == "1") {
+            if (drawText(l_command[1], std::stoi(l_command[2]), std::stoi(l_command[3]), l_command[4], std::stoi(l_command[5])) == false)
+                return false;
+        }
+        if (l_command[0] == "2") {
+            // values
+            // drawMap()
+        }
     }
     _window.display();
     return true;
 }
+
+bool LibOpengl::drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize)
+{
+    sf::Text text((char*)_text.c_str(), _font);
+    text.setPosition(pos_x, pos_y);
+    text.setCharacterSize(charSize);
+    if (_color == "cyan")
+        text.setColor(sf::Color(0, 0, 255, 255));
+    else if (_color == "white")
+        text.setColor(sf::Color(0, 255, 255, 255));
+    else if (_color == "pink")
+        text.setColor(sf::Color(0, 255, 105, 180));
+    else if (_color == "blue")
+        text.setColor(sf::Color(0, 0, 191, 255));
+    else {
+        throw getGraphicFail();
+        return false;
+    }
+    _window.pushGLStates();
+    _window.draw(text);
+    _window.popGLStates();
+    return true;
+}
+
+bool LibOpengl::drawMap()
+{
+    return true;
+}
+
 
 int LibOpengl::getKey()
 {
@@ -139,29 +169,6 @@ void LibOpengl::changeColor(int selected)
         _state = 1;
     if (selected == 2)
         _state = 2;
-}
-
-bool LibOpengl::draw_text(char *string, int charSize, std::string _color_st, int y_position, int x_position)
-{
-    sf::Text text(string, _font);
-    text.setPosition(y_position, x_position);
-    text.setCharacterSize(charSize);
-    if (_color_st == "cyan")
-        text.setColor(sf::Color(0, 0, 255, 255));
-    else if (_color_st == "white")
-        text.setColor(sf::Color(0, 255, 255, 255));
-    else if (_color_st == "pink")
-        text.setColor(sf::Color(0, 255, 105, 180));
-    else if (_color_st == "blue")
-        text.setColor(sf::Color(0, 0, 191, 255));
-    else {
-        throw getGraphicFail();
-        return false;
-    }
-    _window.pushGLStates();
-    _window.draw(text);
-    _window.popGLStates();
-    return true;
 }
 
 void LibOpengl::closeWindow()

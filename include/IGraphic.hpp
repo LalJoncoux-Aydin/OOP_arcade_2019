@@ -16,9 +16,12 @@ class IGraphic {
     public:
         virtual int openWindow() = 0;
         virtual void closeWindow() = 0;
-        virtual bool displayScene(std::vector<std::string> config_scene) = 0;
 
+        virtual bool displayScene(std::vector<std::string> config_scene) = 0;
         virtual void changeColor(int selected) = 0;
+
+        virtual void cleanScreen() = 0;
+
         virtual int getKey() = 0;
         virtual int getState() = 0;
 

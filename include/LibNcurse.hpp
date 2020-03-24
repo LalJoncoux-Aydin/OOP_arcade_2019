@@ -28,10 +28,14 @@ class LibNcurse: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-
-        virtual int getKey();
         virtual void changeColor(int selected) {};
+
+        virtual void cleanScreen();
+        virtual bool drawText();
+        virtual bool drawMap();
+
         // Getters
+        virtual int getKey();
         virtual int getId() {
             return 0;
         };

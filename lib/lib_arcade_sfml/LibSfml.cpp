@@ -155,6 +155,18 @@ bool LibSfml::displayScene(std::vector<std::string> config_scene)
     return true;
 }
 
+void LibSfml::cleanScreen() {
+
+};
+
+bool drawText() {
+    return true;
+};
+
+bool LibSfml::drawMap() {
+    return true;
+};
+
 int LibSfml::getKey()
 {
     while(_window.pollEvent(_Event)) {

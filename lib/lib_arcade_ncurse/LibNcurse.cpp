@@ -59,6 +59,18 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene)
     return true;
 }
 
+void LibNcurse::cleanScreen() {
+
+};
+
+bool drawText() {
+    return true;
+};
+
+bool LibNcurse::drawMap() {
+    return true;
+};
+
 int LibNcurse::getKey()
 {
     int ch = getch();

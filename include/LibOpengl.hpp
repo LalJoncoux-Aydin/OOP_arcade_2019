@@ -33,6 +33,10 @@ class LibOpengl: public IGraphic
         virtual bool displayScene(std::vector<std::string> config_scene);
         virtual void changeColor(int selected);
 
+        virtual void cleanScreen();
+        bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);
+        bool drawMap();
+
         // Getters
         virtual int getKey();
         virtual int getId() {
@@ -65,15 +69,7 @@ class LibOpengl: public IGraphic
       sf::Texture _texture1;
       sf::Font _font;
 
-      std::string _text;
-      int pos_x;
-      int pos_y;
-      std::string _color;
-      int charSize;
-
       void printer();
-      void cleanScreen();
-      bool draw_text(char *string, int charSize,  std::string color, int y_position, int x_position);
 };
 
 extern "C" IGraphic *createLib();
