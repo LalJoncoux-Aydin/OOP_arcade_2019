@@ -93,6 +93,14 @@ bool LibNcurse::drawMap() {
 int LibNcurse::getKey()
 {
     int ch = getch();
+    if (ch == KEY_F(1))
+        return 1;
+    if (ch == KEY_F(2))
+        return 2;
+    if (ch == KEY_F(3))
+        return 3;
+    if (ch == KEY_F(4))
+        return 4;
     if (ch == KEY_F(5))
         return 5;
     if (ch == KEY_F(6))
