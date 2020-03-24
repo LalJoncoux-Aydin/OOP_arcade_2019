@@ -56,7 +56,7 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
     _window.draw(playerImage);
     _window.draw(playerText);
     _window.popGLStates();
-    for(; i < config_scene.size() - 1; i++) {
+    for(; i < config_scene.size(); i++) {
         std::vector<std::string> l_command;
         std::stringstream s_stream(config_scene[i]);
         c = 0;
@@ -86,13 +86,13 @@ bool LibOpengl::drawText(std::string _text, int pos_x, int pos_y, std::string _c
     text.setPosition(pos_x, pos_y);
     text.setCharacterSize(charSize);
     if (_color == "cyan")
-        text.setColor(sf::Color(0, 0, 255, 255));
+        text.setFillColor(sf::Color(0, 0, 255, 255));
     else if (_color == "white")
-        text.setColor(sf::Color(0, 255, 255, 255));
+        text.setFillColor(sf::Color(0, 255, 255, 255));
     else if (_color == "pink")
-        text.setColor(sf::Color(0, 255, 105, 180));
+        text.setFillColor(sf::Color(0, 255, 105, 180));
     else if (_color == "blue")
-        text.setColor(sf::Color(0, 0, 191, 255));
+        text.setFillColor(sf::Color(0, 0, 191, 255));
     else {
         throw getGraphicFail();
         return false;
@@ -122,8 +122,7 @@ int LibOpengl::getKey()
         } else if (event.type == sf::Event::TextEntered) {
             playerInput += event.text.unicode;
             playerText.setString(playerInput);
-//            displayMenu();
-            //_window.display();
+            return 11;
         }
         else if (event.type == sf::Event::KeyPressed)
         {
@@ -161,14 +160,6 @@ int LibOpengl::getKey()
             glViewport(0, 0, event.size.width, event.size.height);
     }
     return 0;
-}
-
-void LibOpengl::changeColor(int selected)
-{
-    if (selected == 1)
-        _state = 1;
-    if (selected == 2)
-        _state = 2;
 }
 
 void LibOpengl::closeWindow()

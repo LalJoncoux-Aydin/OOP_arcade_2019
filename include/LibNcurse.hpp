@@ -28,7 +28,6 @@ class LibNcurse: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void changeColor(int selected) {};
 
         virtual void cleanScreen();
         virtual bool drawText();

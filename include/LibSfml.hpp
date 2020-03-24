@@ -78,7 +78,6 @@ class LibSfml: public IGraphic
         // void check_mouse_pos(sf::Event::MouseMoveEvent const &mouse, sf::Text &text, bool isSelected);
         // void check_mouse_click(sf::Event const &event, sf::Text &text, bool &isSelected);
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void changeColor(int selected) {};
 
         virtual void cleanScreen();
         bool drawText();

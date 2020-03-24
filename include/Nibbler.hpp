@@ -18,6 +18,10 @@ class Nibbler: public IGames {
     public:
         Nibbler();
 
+        virtual std::vector<std::string> readSceneFile();
+        virtual int startGame();
+        virtual void changeSelection(int selected) {};
+
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
@@ -27,20 +31,12 @@ class Nibbler: public IGames {
         virtual int getId() {
             return _id;
         };
-        virtual std::vector<std::string> getListName() {
-            return list_name;
-        };
-        virtual std::vector<std::string> readSceneFile();
-
-        virtual int startGame();
 
         ~Nibbler() = default;
     private:
         void *_lib_ptr;
         int _id = 2;
         std::string config_path = "./games/lib_arcade_nibbler/.nibbler";
-
-        std::vector<std::string> list_name;
 };
 
 extern "C" IGames *createGame();

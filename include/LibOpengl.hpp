@@ -31,7 +31,6 @@ class LibOpengl: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void changeColor(int selected);
 
         virtual void cleanScreen();
         bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);

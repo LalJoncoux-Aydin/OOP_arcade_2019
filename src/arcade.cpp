@@ -16,7 +16,6 @@ bool arcade(char *lib_name)
         throw openLibFail();
         return false;
     }
-
     if (graphical_t->displayScene(game_t->readSceneFile()) == false)
         return false;
     while (_running == true) {
@@ -32,25 +31,34 @@ bool arcade(char *lib_name)
         if (key == 84)
             _running = false;
         // Select game
-        // if (key == 1) {
-        //     graphical_t->changeColor(1);
-            // if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-            //     return false;
-        // }
-        // if (key == 2) {
-        //      graphical_t->changeColor(2);
-            // if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-            //     return false;
-        // }
+        if (key == 1) {
+            game_t->changeSelection(1);
+            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+                return false;
+        }
+        if (key == 2) {
+            game_t->changeSelection(2);
+            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+                return false;
+        }
+        // Write name
+        if (key == 11) {
+            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+                return false;
+        }
+
         // // init game or restart
         // if (key == 10 || key == 3) {
         //   if (graphical_t->getState() == 1 || graphical_t->getState() == 2) {
-        //         // Clear the window
+        //       // Clear the window
+        //       graphical_t->cleanScreen();
         //
-        //         if ((game_t = initGame(game_t, (char *)games_path[graphical_t->getState()].c_str())) == NULL)
-        //           throw openLibFail();
+        //       if ((game_t = initGame(game_t, (char *)games_path[graphical_t->getState()].c_str())) == NULL)
+        //          throw openLibFail();
         //
-        //         // Display map
+        //       // Display map
+        //       if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+        //          return false;
         //   }
         // }
         // Menu
