@@ -1,8 +1,5 @@
 #include "LibOpengl.hpp"
-#include <string>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
+
 // Include GLM
 //#include <glm/glm.hpp>
 //using namespace glm;
@@ -80,25 +77,25 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
     return true;
 }
 
-bool LibOpengl::drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize)
+bool LibOpengl::drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize)
 {
-    sf::Text text((char*)_text.c_str(), _font);
-    text.setPosition(pos_x, pos_y);
-    text.setCharacterSize(charSize);
+    sf::Text _text((char*)_name.c_str(), _font);
+    _text.setPosition(pos_x, pos_y);
+    _text.setCharacterSize(charSize);
     if (_color == "cyan")
-        text.setFillColor(sf::Color(0, 0, 255, 255));
+        _text.setFillColor(sf::Color(0, 0, 255, 255));
     else if (_color == "white")
-        text.setFillColor(sf::Color(0, 255, 255, 255));
+        _text.setFillColor(sf::Color(0, 255, 255, 255));
     else if (_color == "pink")
-        text.setFillColor(sf::Color(0, 255, 105, 180));
+        _text.setFillColor(sf::Color(0, 255, 105, 180));
     else if (_color == "blue")
-        text.setFillColor(sf::Color(0, 0, 191, 255));
+        _text.setFillColor(sf::Color(0, 0, 191, 255));
     else {
         throw getGraphicFail();
         return false;
     }
     _window.pushGLStates();
-    _window.draw(text);
+    _window.draw(_text);
     _window.popGLStates();
     return true;
 }

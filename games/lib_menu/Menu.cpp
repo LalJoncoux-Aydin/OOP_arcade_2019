@@ -5,12 +5,6 @@ Menu::Menu()
 
 }
 
-int Menu::startGame()
-{
-    std::cout << "caca" << std::endl;
-    return 0;
-}
-
 std::vector<std::string> Menu::readSceneFile()
 {
     std::string newline;

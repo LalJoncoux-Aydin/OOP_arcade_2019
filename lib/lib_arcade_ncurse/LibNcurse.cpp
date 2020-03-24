@@ -59,11 +59,13 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene)
     return true;
 }
 
-void LibNcurse::cleanScreen() {
+void LibNcurse::cleanScreen()
+{
 
 };
 
-bool drawText() {
+bool LibNcurse::drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize)
+{
     return true;
 };
 

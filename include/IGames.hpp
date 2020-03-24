@@ -12,6 +12,8 @@
 #include <iostream>
 #include <fstream>
 
+#include "arcade_exception.hpp"
+
 class IGames {
     public:
         virtual std::vector<std::string> readSceneFile() = 0;

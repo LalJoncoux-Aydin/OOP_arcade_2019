@@ -19,7 +19,7 @@ class Pacman: public IGames {
         Pacman();
 
         virtual std::vector<std::string> readSceneFile();
-        virtual void changeSelection(int selected) {};
+        virtual void changeSelection(__attribute__((unused))int selected) {};
 
         // Getters
         virtual void *getLibPtr() {

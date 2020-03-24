@@ -5,12 +5,6 @@ Pacman::Pacman()
 
 }
 
-int Pacman::startGame()
-{
-    std::cout << "caca" << std::endl;
-    return 0;
-}
-
 std::vector<std::string> Pacman::readSceneFile()
 {
     std::string newline;

@@ -2,6 +2,11 @@
 
 LibSfml::LibSfml()
 {
+    //  MANAGE ERROR LOADING
+    if (!_pTexture.loadFromFile("assets/background.png"))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_font.loadFromFile("assets/neon2.ttf"))
+        std::cout << "Error: font not loading" << std::endl;
 }
 
 
@@ -60,106 +65,60 @@ int LibSfml::openWindow()
 
     return 0;
 }
-//
-// void LibSfml::displayMenu(std::vector<std::string> list_name)
-// {
-//     //MANAGE ERROR LOADING
-//     if (!_pTexture.loadFromFile("assets/background.png"))
-//         std::cout <<"Error: image not loading" << std::endl;
-//     if (!_font.loadFromFile("assets/neon2.ttf"))
-//         std::cout << "Error: font not loading" << std::endl;
-//
-//     //         //PLAY MUSIC
-//     //
-//
-//     //INIT THE BUTTON NIBBLER IN MENU
-//     _nibbler.setFont(_font);
-//     _nibbler.setCharacterSize(60);
-//     _nibbler.setFillColor(sf::Color::White);
-//     _nibbler.setStyle(sf::Text::Bold);
-//     _nibbler.setString("NIBBLER");
-//     _nibbler.setPosition(530, 660);
-//
-//
-//     //INIT THE BUTTON EXIT IN MENU
-//     _exit.setFont(_font);
-//     _exit.setCharacterSize(60);
-//     _exit.setFillColor(sf::Color::Magenta);
-//     _exit.setStyle(sf::Text::Bold);
-//     _exit.setString("EXIT");
-//     _exit.setPosition(190, 770);
-//
-//
-//     //INIT THE BUTTON PACMAN IN MENU
-//     _pacman.setFont(_font);
-//     _pacman.setCharacterSize(60);
-//     _pacman.setFillColor(sf::Color::White);
-//     _pacman.setStyle(sf::Text::Bold);
-//     _pacman.setString("PACMAN");
-//     _pacman.setPosition(900, 660);
-//
-//
-//     //INIT THE BUTTON SFML IN MENU
-//     _lib1.setFont(_font);
-//     _lib1.setCharacterSize(60);
-//     _lib1.setFillColor(sf::Color::White);
-//     _lib1.setStyle(sf::Text::Bold);
-//     _lib1.setString("SFML");
-//     _lib1.setPosition(580, 545);
-//
-//
-//     //INIT THE BUTTON NCURSE IN MENU
-//     _lib2.setFont(_font);
-//     _lib2.setCharacterSize(60);
-//     _lib2.setFillColor(sf::Color::White);
-//     _lib2.setStyle(sf::Text::Bold);
-//     _lib2.setString("NCURSE");
-//     _lib2.setPosition(770, 545);
-//
-//
-//     //INIT THE BUTTON OPENGL IN MENU
-//     _lib3.setFont(_font);
-//     _lib3.setCharacterSize(60);
-//     _lib3.setFillColor(sf::Color::White);
-//     _lib3.setStyle(sf::Text::Bold);
-//     _lib3.setString("OPENGL");
-//     _lib3.setPosition(1000, 545);
-//
-//     //INIT THE NAME OF PLAYER IN MENU
-//     _playerText.setFont(_font);
-//     _playerText.setCharacterSize(60);
-//     _playerText.setFillColor(sf::Color::White);
-//     _playerText.setStyle(sf::Text::Bold);
-//     _playerText.setPosition(480, 423);
-//
-//     //DISPLAY BACKGROUND
-//     _playerImage.setTexture(_pTexture);
-//
-//     //DISPLAY BUTTON
-// //    draw_text("NIBBLER", 60, sf::Color::White, 530, 660);
-//     _window.draw(_playerImage);
-//     _window.draw(_playerText);
-//     _window.draw(_nibbler);
-//     _window.draw(_exit);
-//     _window.draw(_pacman);
-//     _window.draw(_lib1);
-//     _window.draw(_lib2);
-//     _window.draw(_lib3);
-//
-//     // Display
-//     _window.display();
-// }
 
-bool LibSfml::displayScene(std::vector<std::string> config_scene)
+void LibSfml::cleanScreen()
 {
-    return true;
-}
-
-void LibSfml::cleanScreen() {
 
 };
 
-bool drawText() {
+bool LibSfml::displayScene(std::vector<std::string> config_scene)
+{
+    size_t i = 0;
+    int c = 0;
+
+    for(; i < config_scene.size(); i++) {
+        std::vector<std::string> l_command;
+        std::stringstream s_stream(config_scene[i]);
+        c = 0;
+        while(s_stream.good() && c != 6){
+            std::string param;
+
+            c++;
+            getline(s_stream, param, ',');
+            l_command.push_back(param);
+        }
+        if (l_command[0] == "1") {
+            if (drawText(l_command[1], std::stoi(l_command[2]), std::stoi(l_command[3]), l_command[4], std::stoi(l_command[5])) == false)
+                return false;
+        }
+        if (l_command[0] == "2") {
+            // values
+            // drawMap()
+        }
+        //DISPLAY BACKGROUND
+        _playerImage.setTexture(_pTexture);
+    }
+    _window.display();
+    return true;
+}
+
+bool LibSfml::drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize)
+{
+    sf::Text _text;
+    _text.setString((char *)_name.c_str());
+    _text.setFont(_font);
+    _text.setStyle(sf::Text::Bold);
+    _text.setPosition(pos_x, pos_y);
+    _text.setCharacterSize(charSize);
+    if (_color == "white")
+        _text.setFillColor(sf::Color::White);
+    else if (_color == "pink")
+        _text.setFillColor(sf::Color::Magenta);
+    else {
+        throw getGraphicFail();
+        return false;
+    }
+    _window.draw(_playerImage);
     return true;
 };
 
@@ -179,6 +138,8 @@ int LibSfml::getKey()
         case sf::Event::TextEntered:
             _playerInput += _Event.text.unicode;
             _playerText.setString(_playerInput);
+            break;
+        default:
             break;
         }
         if (_exit.getGlobalBounds().contains(sf::Mouse::getPosition(_window).x, sf::Mouse::getPosition(_window).y) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
@@ -235,24 +196,6 @@ int LibSfml::getKey()
     }
     return 0;
 }
-//
-// void LibSfml::draw_text_sfml(char *string, int charSize, sf::Color color, int y_position, int x_position)
-// {
-//     // sf::Text text(string, _font);
-//     // text.setPosition(y_position, x_position);
-//     // text.setCharacterSize(charSize);
-//     // text.setColor(color);
-//     // _window.pushGLStates();
-//     // _window.draw(text);
-//     // _window.popGLStates();
-//     //
-//     // _lib3.setFont(_font);
-//     // _lib3.setCharacterSize(60);
-//     // _lib3.setFillColor(sf::Color::White);
-//     // _lib3.setStyle(sf::Text::Bold);
-//     // _lib3.setString("OPENGL");
-//     // _lib3.setPosition(1000, 545);
-// }
 
 void LibSfml::closeWindow()
 {

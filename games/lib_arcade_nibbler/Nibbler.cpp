@@ -5,12 +5,6 @@ Nibbler::Nibbler()
 
 }
 
-int Nibbler::startGame()
-{
-    std::cout << "caca" << std::endl;
-    return 0;
-}
-
 std::vector<std::string> Nibbler::readSceneFile()
 {
     std::string newline;

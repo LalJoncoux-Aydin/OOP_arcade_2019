@@ -9,6 +9,12 @@
 #define IGRAPHIC_HPP_
 
 #include <vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
 
 #include "arcade_exception.hpp"
 
@@ -19,6 +25,7 @@ class IGraphic {
 
         virtual bool displayScene(std::vector<std::string> config_scene) = 0;
         virtual void cleanScreen() = 0;
+        virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize) = 0;
 
         // Getters
         virtual int getKey() = 0;
@@ -31,10 +38,6 @@ class IGraphic {
         virtual ~IGraphic() = default;
 
     protected :
-        int cyan [4] = { 0, 0, 255, 255 };
-        int white [4] = { 0, 255, 255, 255 };
-        int pink [4] = { 0, 255, 105, 180 };
-        int blue [4] = { 0, 0, 191, 255 };
 };
 
 #endif /* !IGRAPHIC_HPP_ */

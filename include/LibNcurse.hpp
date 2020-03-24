@@ -29,7 +29,7 @@ class LibNcurse: public IGraphic
 
         virtual bool displayScene(std::vector<std::string> config_scene);
         virtual void cleanScreen();
-        bool drawText();
+        virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize);
         bool drawMap();
 
         // Getters
