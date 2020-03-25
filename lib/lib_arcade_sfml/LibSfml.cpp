@@ -122,17 +122,17 @@ bool LibSfml::drawMap() {
     return true;
 };
 
-bool LibOpengl::drawHero()
+bool LibSfml::drawHero()
 {
 
 }
 
-bool LibOpengl::drawEnnemies()
+bool LibSfml::drawEnnemies()
 {
 
 }
 
-bool LibOpengl::drawObject()
+bool LibSfml::drawObject()
 {
 
 }

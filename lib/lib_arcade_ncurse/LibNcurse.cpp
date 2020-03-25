@@ -78,17 +78,17 @@ bool LibNcurse::drawMap() {
     return true;
 };
 
-bool LibOpengl::drawHero()
+bool LibNcurse::drawHero()
 {
 
 }
 
-bool LibOpengl::drawEnnemies()
+bool LibNcurse::drawEnnemies()
 {
 
 }
 
-bool LibOpengl::drawObject()
+bool LibNcurse::drawObject()
 {
 
 }
