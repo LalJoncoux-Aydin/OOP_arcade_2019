@@ -15,11 +15,12 @@ std::vector<std::string> Nibbler::readSceneFile()
         }
     }
     // Construct map
-    for(size_t i = 0; i < config_file.size(); i++) {
-        if (config_file[i].at(0) == '2') {
-            std::cout << config_file[i] << std::endl;
-        }
-    }
+    // for(size_t i = 0; i < config_file.size(); i++) {
+    //     if (config_file[i].at(0) == '2') {
+    //         _map.push_back(config_file[i]);
+    //         std::cout << config_file[i] << std::endl;
+    //     }
+    // }
     return config_file;
 }
 

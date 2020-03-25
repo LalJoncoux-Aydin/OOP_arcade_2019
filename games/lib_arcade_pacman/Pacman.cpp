@@ -2,8 +2,6 @@
 
 Pacman::Pacman()
 {
-    // Construct map
-    std::cout << "construct" << std::endl;
 }
 
 std::vector<std::string> Pacman::readSceneFile()
@@ -16,6 +14,12 @@ std::vector<std::string> Pacman::readSceneFile()
             config_file.push_back(newline);
         }
     }
+    // Construct map
+    // for(size_t i = 0; i < config_file.size(); i++) {
+    //     if (config_file[i].at(0) == '2') {
+    //         _map.push_back(config_file[i]);
+    //     }
+    // }
     return config_file;
 }
 

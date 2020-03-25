@@ -28,6 +28,9 @@ class Nibbler: public IGames {
         virtual int getId() {
             return 2;
         };
+        virtual std::vector<std::string> getMap() {
+            return _map;
+        };
 
         // Setters
         virtual void setLibPtr(void *new_lib) {
@@ -37,6 +40,7 @@ class Nibbler: public IGames {
         ~Nibbler() = default;
     private:
         std::string config_path = "./games/lib_arcade_nibbler/nibbler.txt";
+        std::vector<std::string> _map;
 };
 
 extern "C" IGames *createGame();

@@ -28,6 +28,9 @@ class Pacman: public IGames {
         virtual int getId() {
             return 1;
         };
+        virtual std::vector<std::string> getMap() {
+            return _map;
+        };
 
         // Setters
         virtual void setLibPtr(void *new_lib) {
@@ -37,6 +40,7 @@ class Pacman: public IGames {
         ~Pacman() = default;
     private:
         std::string config_path = "./games/lib_arcade_pacman/pacman.txt";
+        std::vector<std::string> _map;
 };
 
 extern "C" IGames *createGame();

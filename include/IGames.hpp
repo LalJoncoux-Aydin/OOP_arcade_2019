@@ -25,6 +25,7 @@ class IGames {
         // Getters
         virtual void *getLibPtr() = 0;
         virtual int getId() = 0;
+        virtual std::vector<std::string> getMap() = 0;
 
         // Setters
         virtual void setLibPtr(void * new_lib) = 0;
@@ -34,7 +35,6 @@ class IGames {
         void *_lib_ptr;
 
         std::vector<std::string> config_file;
-        std::vector<std::string> _map;
 
         Player *_player;
         Ennemies *_ennemies;

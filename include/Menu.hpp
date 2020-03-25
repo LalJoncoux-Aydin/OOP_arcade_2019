@@ -29,6 +29,9 @@ class Menu: public IGames {
         virtual int getId() {
             return 0;
         };
+        virtual std::vector<std::string> getMap() {
+            return _map;
+        };
 
         // Setters
         virtual void setLibPtr(void *new_lib) {
@@ -40,6 +43,7 @@ class Menu: public IGames {
         std::string config_path = "./games/lib_menu/menu.txt";
         std::string nibbler_select = "./games/lib_menu/menu_nibbler.txt";
         std::string pacman_select = "./games/lib_menu/menu_pacman.txt";
+        std::vector<std::string> _map;
 };
 
 extern "C" IGames *createGame();

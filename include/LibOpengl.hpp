@@ -31,9 +31,11 @@ class LibOpengl: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void cleanScreen();
         virtual bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);
         bool drawMap();
+        bool drawHero();
+        bool drawEnnemies();
+        bool drawObject();
 
         // Getters
         virtual int getKey();
@@ -50,8 +52,6 @@ class LibOpengl: public IGraphic
         };
 
   private:
-      void *_lib_ptr;
-
       std::string _name;
       sf::RenderWindow _window;
 

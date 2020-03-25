@@ -27,7 +27,7 @@ int LibOpengl::openWindow()
     playerText.setString("||");
     playerText.setCharacterSize(50);
     playerText.setFillColor(sf::Color::White);
-    playerText.setPosition(800, 300);
+    playerText.setPosition(730, 400);
 
     // effacement les tampons de couleur/profondeur
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -37,11 +37,6 @@ int LibOpengl::openWindow()
 
 void LibOpengl::printer()
 {
-}
-
-void LibOpengl::cleanScreen()
-{
-    _window.display();
 }
 
 bool LibOpengl::displayScene(std::vector<std::string> config_scene)
@@ -105,17 +100,6 @@ bool LibOpengl::drawMap()
     return true;
 }
 
-bool LibOpengl::drawHero()
-{
-}
-
-bool LibOpengl::drawEnnemies()
-{
-}
-
-bool LibOpengl::drawObject()
-{
-}
 
 int LibOpengl::getKey()
 {
@@ -130,21 +114,21 @@ int LibOpengl::getKey()
         } else if (event.type == sf::Event::TextEntered) {
             playerInput += event.text.unicode;
             playerText.setString(playerInput);
-            return 11;
+            return 0;
         }
         else if (event.type == sf::Event::KeyPressed)
         {
-            if (event.key.code == sf::Keyboard::F3) {
-                return 3;
-            }
             if (event.key.code == sf::Keyboard::F4) {
                 return 4;
             }
             if (event.key.code == sf::Keyboard::F5) {
-                return 5;
+                return 6;
             }
             if (event.key.code == sf::Keyboard::F6) {
                 return 6;
+            }
+            if (event.key.code == sf::Keyboard::F7) {
+                return 7;
             }
             if (event.key.code == sf::Keyboard::Left)
                 return 12;
@@ -154,10 +138,10 @@ int LibOpengl::getKey()
                 return 14;
             if (event.key.code == sf::Keyboard::Up)
                 return 13;
+            if (event.key.code == sf::Keyboard::F3)
+                return 3;
             if (event.key.code == sf::Keyboard::F2)
                 return 2;
-            if (event.key.code == sf::Keyboard::F1)
-                return 1;
             if (event.key.code == sf::Keyboard::F12) {
                 return 84;
             }
