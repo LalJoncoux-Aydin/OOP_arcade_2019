@@ -18,11 +18,6 @@ int LibNcurse::openWindow()
     return 0;
 }
 
-void LibNcurse::cleanScreen()
-{
-
-};
-
 bool LibNcurse::displayScene(std::vector<std::string> config_scene)
 {
     size_t i = 0;
