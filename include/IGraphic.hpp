@@ -38,6 +38,7 @@ class IGraphic {
         virtual ~IGraphic() = default;
 
     protected :
+        void *_lib_ptr;
 };
 
 #endif /* !IGRAPHIC_HPP_ */

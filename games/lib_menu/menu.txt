@@ -1,6 +1,6 @@
-1,Arcade,790,5,white,80
-1,Menu,870,105,white,70
-1,Player name :,300,300,white,50
+1,Arcade,890,10,white,80
+1,Menu,900,280,white,70
+1,Player name :,300,400,white,50
 1,NCurse,300,500,pink,50
 1,OpenGl,900,500,pink,50
 1,SFML,1460,500,pink,50

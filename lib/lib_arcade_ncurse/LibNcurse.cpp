@@ -11,6 +11,7 @@ int LibNcurse::openWindow()
     cbreak();
     keypad(stdscr, TRUE);
     getmaxyx(stdscr, _row, _col);
+    clear();
     return 0;
 }
 
@@ -45,9 +46,22 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene)
     return true;
 }
 
-bool LibNcurse::drawText(std::string _name, int pos_x, int pos_y, __attribute__((unused))std::string _color, __attribute__((unused))int charSize)
+bool LibNcurse::drawText(std::string _name, int pos_y, int pos_x, __attribute__((unused))std::string _color, __attribute__((unused))int charSize)
 {
+    refresh();
+    // std::cout << "cols - 5 / 2    " << (COLS- 5) / 2 << std::endl;
+    // std::cout << "pos_y   " << pos_y / 5 << std::endl;
+    // COLS MAX == 100
+    // LINES MAX == 55
+    if (pos_x > 55) {
+        pos_x /= 19;
+    }
+//        std::cout << "pos_y   " << pos_y << std::endl;
+    pos_y = (int)(((float) pos_y / 1500) * 100);
+    // std::cout << "pos_y   " << pos_y << std::endl;
+    // std::cout << "pos_y   " << rem << std::endl;
     mvprintw(pos_x, pos_y, "%s", _name.c_str());
+
     //     // Display Menu title
     //     _row = _row - 40;
     //     _col = (_col / 2) - strlen(menu.c_str());
@@ -63,26 +77,6 @@ bool LibNcurse::drawText(std::string _name, int pos_x, int pos_y, __attribute__(
     //             _name.push_back(ch);
     //         }
     //     }
-    //
-    //     // Display libs
-    //     _col -= 10;
-    //     _row += 3;
-    //     mvprintw(_row, _col, "%s", libs.c_str());
-    //
-    //     // Display games
-    //     _col += 7;
-    //     _row += 3;
-    //     mvprintw(_row, _col,"%s", games.c_str());
-    //
-    //     // Display Highscore
-    //     _col += 6;
-    //     _row += 3;
-    //     mvprintw(_row, _col,"%s", highscore.c_str());
-    //
-    //     // Display exit
-    //     _col += 2;
-    //     _row += 3;
-    //     mvprintw(_row, _col,"%s", exit.c_str());
     return true;
 };
 

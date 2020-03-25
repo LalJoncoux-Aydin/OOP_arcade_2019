@@ -38,6 +38,9 @@ bool arcade(char *lib_name)
                 int new_id = game_t->getId() == 1 ? 2 : 1;
                 if ((game_t = initGame(game_t, (char *)games_path[new_id].c_str())) == NULL)
                      throw openLibFail();
+                std::vector<std::string> test = game_t->getMap();
+                std::cout << test[0] << std::endl;
+            //    std::cout << game_t->getMap()[0] << std::endl;
             }
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;

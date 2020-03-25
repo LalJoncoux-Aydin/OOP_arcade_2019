@@ -50,8 +50,6 @@ class LibOpengl: public IGraphic
         };
 
   private:
-      void *_lib_ptr;
-
       std::string _name;
       sf::RenderWindow _window;
 

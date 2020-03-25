@@ -47,7 +47,6 @@ class LibSfml: public IGraphic
         };
 
   private:
-      void *_lib_ptr;
       //DEFINE EVENT
       sf::Event _Event;
       //DEFINE WINDOW

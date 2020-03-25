@@ -18,6 +18,7 @@
 #include "initLib.hpp"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <cmath>
 
 class LibNcurse: public IGraphic
 {
@@ -50,14 +51,8 @@ class LibNcurse: public IGraphic
       int ch;
       int _row;
       int _col;
-      void *_lib_ptr;
-      std::string _name;
-      std::string menu = "Menu";
-      std::string getName = "Enter a name : ";
-      std::string libs = "Libs : LibSfml - LibNcurse - LibOpenGl";
-      std::string games = "Games : Nibbler - Pacman";
-      std::string highscore = "Highscore";
-      std::string exit = "Exit";
+      int nb_divide = 15;
+      WINDOW *BOARD[30];
 };
 
 extern "C" IGraphic *createLib();
