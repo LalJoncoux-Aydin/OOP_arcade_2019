@@ -2,7 +2,10 @@
 
 LibNcurse::LibNcurse()
 {
+    // start_color();
 
+    // init_pair(1, COLOR_BLACK, COLOR_BLACK);
+    // init_pair(2, COLOR_RED, COLOR_BLACK);
 }
 
 int LibNcurse::openWindow()
@@ -48,25 +51,16 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene)
 
 bool LibNcurse::drawText(std::string _name, int pos_y, int pos_x, __attribute__((unused))std::string _color, __attribute__((unused))int charSize)
 {
+    start_color();
     refresh();
-    // std::cout << "cols - 5 / 2    " << (COLS- 5) / 2 << std::endl;
-    // std::cout << "pos_y   " << pos_y / 5 << std::endl;
-    // COLS MAX == 100
-    // LINES MAX == 55
     if (pos_x > 55) {
         pos_x /= 19;
     }
-//        std::cout << "pos_y   " << pos_y << std::endl;
     pos_y = (int)(((float) pos_y / 1500) * 100);
-    // std::cout << "pos_y   " << pos_y << std::endl;
-    // std::cout << "pos_y   " << rem << std::endl;
+    init_pair(2, COLOR_WHITE, COLOR_BLACK);
+    attron(COLOR_PAIR(2));
     mvprintw(pos_x, pos_y, "%s", _name.c_str());
 
-    //     // Display Menu title
-    //     _row = _row - 40;
-    //     _col = (_col / 2) - strlen(menu.c_str());
-    //     mvprintw(_row, _col ,"%s",menu.c_str());
-    //
     //     // Get player name
     //     _row += 3;
     //     _col -= 5;
@@ -77,6 +71,7 @@ bool LibNcurse::drawText(std::string _name, int pos_y, int pos_x, __attribute__(
     //             _name.push_back(ch);
     //         }
     //     }
+    refresh();
     return true;
 };
 
