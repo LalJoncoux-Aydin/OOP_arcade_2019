@@ -119,21 +119,21 @@ int LibOpengl::getKey()
         } else if (event.type == sf::Event::TextEntered) {
             playerInput += event.text.unicode;
             playerText.setString(playerInput);
-            return 11;
+            return 0;
         }
         else if (event.type == sf::Event::KeyPressed)
         {
-            if (event.key.code == sf::Keyboard::F3) {
-                return 3;
-            }
             if (event.key.code == sf::Keyboard::F4) {
                 return 4;
             }
             if (event.key.code == sf::Keyboard::F5) {
-                return 5;
+                return 6;
             }
             if (event.key.code == sf::Keyboard::F6) {
                 return 6;
+            }
+            if (event.key.code == sf::Keyboard::F7) {
+                return 7;
             }
             if (event.key.code == sf::Keyboard::Left)
                 return 12;
@@ -143,10 +143,10 @@ int LibOpengl::getKey()
                 return 14;
             if (event.key.code == sf::Keyboard::Up)
                 return 13;
+            if (event.key.code == sf::Keyboard::F3)
+                return 3;
             if (event.key.code == sf::Keyboard::F2)
                 return 2;
-            if (event.key.code == sf::Keyboard::F1)
-                return 1;
             if (event.key.code == sf::Keyboard::F12) {
                 return 84;
             }

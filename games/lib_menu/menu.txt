@@ -1,8 +1,8 @@
-1,Arcade,890,10,white,80
-1,Menu,900,280,white,70
-1,Player name :,300,400,white,50
-1,NCurse,300,500,pink,50
-1,OpenGl,900,500,pink,50
-1,SFML,1460,500,pink,50
-1,Pacman,890,600,pink,50
-1,Nibbler,890,700,pink,50
+1,Arcade,890,10,white,80,false
+1,Menu,900,280,white,70,false
+1,Player name :,300,400,white,50,true
+1,NCurse,300,500,pink,50,false
+1,OpenGl,900,500,pink,50,false
+1,SFML,1460,500,pink,50,false
+1,Pacman,890,600,pink,50,false
+1,Nibbler,890,700,pink,50,false

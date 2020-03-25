@@ -23,18 +23,18 @@ bool arcade(char *lib_name)
 
         int key = graphical_t->getKey();
         // Select and change lib
-        if (key == 5 || key == 6) {
+        if (key == 6 || key == 7) {
             if ((graphical_t = changeLib(graphical_t, key)) == NULL)
                 throw openLibFail();
             if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
         }
         // Select and change game
-        if (key == 1 || key == 2 || key == 10 || key == 3) {
+        if (key == 2 || key == 3 || key == 10 || key == 4) {
             if (game_t->getId() == 0) {
                 game_t->changeSelection(key);
             }
-            if (game_t->getId() != 0 || key == 10 || key == 3) {
+            if (game_t->getId() != 0 || key == 10 || key == 4) {
                 int new_id = game_t->getId() == 1 ? 2 : 1;
                 if ((game_t = initGame(game_t, (char *)games_path[new_id].c_str())) == NULL)
                      throw openLibFail();
@@ -42,15 +42,7 @@ bool arcade(char *lib_name)
                 std::cout << test[0] << std::endl;
             //    std::cout << game_t->getMap()[0] << std::endl;
             }
-            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-                return false;
-
             // displayHero()
-        }
-        // Write name
-        if (key == 11) {
-            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-                return false;
         }
         // Menu
         if (key == 4) {
@@ -58,8 +50,6 @@ bool arcade(char *lib_name)
                 throw openLibFail();
                 return false;
             }
-            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
-                return false;
         }
 
         // Move caracter
@@ -67,6 +57,9 @@ bool arcade(char *lib_name)
         // Exit
         if (key == 84)
             _running = false;
+
+        if (graphical_t->displayScene(game_t->readSceneFile()) == false)
+            return false;
     }
 
     graphical_t->closeWindow();
