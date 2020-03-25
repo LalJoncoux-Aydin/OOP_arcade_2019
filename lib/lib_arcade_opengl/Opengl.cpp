@@ -48,7 +48,7 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
     _window.draw(playerImage);
     _window.draw(playerText);
     _window.popGLStates();
-    if (_id != 0) {
+    if (this->getId() != 0) {
         // this->drawHero();
 
         // this->drawObject();
