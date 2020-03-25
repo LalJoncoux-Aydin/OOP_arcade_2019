@@ -39,11 +39,6 @@ void LibOpengl::printer()
 {
 }
 
-void LibOpengl::cleanScreen()
-{
-    _window.display();
-}
-
 bool LibOpengl::displayScene(std::vector<std::string> config_scene)
 {
     size_t i = 0;

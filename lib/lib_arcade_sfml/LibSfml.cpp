@@ -66,11 +66,6 @@ int LibSfml::openWindow()
     return 0;
 }
 
-void LibSfml::cleanScreen()
-{
-
-};
-
 bool LibSfml::displayScene(std::vector<std::string> config_scene)
 {
     size_t i = 0;
