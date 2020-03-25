@@ -19,6 +19,9 @@ bool arcade(char *lib_name)
     if (graphical_t->displayScene(game_t->readSceneFile()) == false)
         return false;
 
+
+
+
     while (_running == true) {
 
         int key = graphical_t->getKey();
