@@ -27,7 +27,7 @@ int LibOpengl::openWindow()
     playerText.setString("||");
     playerText.setCharacterSize(50);
     playerText.setFillColor(sf::Color::White);
-    playerText.setPosition(800, 300);
+    playerText.setPosition(730, 400);
 
     // effacement les tampons de couleur/profondeur
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
