@@ -105,6 +105,17 @@ bool LibOpengl::drawMap()
     return true;
 }
 
+bool LibOpengl::drawHero()
+{
+}
+
+bool LibOpengl::drawEnnemies()
+{
+}
+
+bool LibOpengl::drawObject()
+{
+}
 
 int LibOpengl::getKey()
 {
