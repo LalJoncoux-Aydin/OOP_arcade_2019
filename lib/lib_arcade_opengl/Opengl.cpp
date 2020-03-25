@@ -116,6 +116,8 @@ bool LibOpengl::drawObject()
 }
 
 
+
+
 int LibOpengl::getKey()
 {
     // gestion des évènements
