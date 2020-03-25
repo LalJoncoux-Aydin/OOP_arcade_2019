@@ -102,16 +102,30 @@ bool LibOpengl::drawMap()
 
 bool LibOpengl::drawHero()
 {
+    sf::Texture hero;
 
+    sf::Sprite sprite(hero);
+    hero.loadFromFile("assets/hero.png");
+    _window.draw(sprite);
 }
 
 bool LibOpengl::drawEnnemies()
 {
+    sf::Texture ennemies;
+
+    sf::Sprite sprite(ennemies);
+    ennemies.loadFromFile("assets/ennemies.png");
+    _window.draw(sprite);
 
 }
 
 bool LibOpengl::drawObject()
 {
+    sf::Texture object;
+
+    sf::Sprite sprite(object);
+    object.loadFromFile("assets/object.png");
+    _window.draw(sprite);
 
 }
 
