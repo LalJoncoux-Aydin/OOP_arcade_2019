@@ -30,6 +30,9 @@ class LibSfml: public IGraphic
         virtual bool displayScene(std::vector<std::string> config_scene);
         virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize);
         bool drawMap();
+        virtual bool drawHero();
+        virtual bool drawEnnemies();
+        virtual bool drawObject();
 
         // Getters
         virtual int getKey();

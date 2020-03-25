@@ -78,6 +78,21 @@ bool LibNcurse::drawMap() {
     return true;
 };
 
+bool LibOpengl::drawHero()
+{
+
+}
+
+bool LibOpengl::drawEnnemies()
+{
+
+}
+
+bool LibOpengl::drawObject()
+{
+
+}
+
 int LibNcurse::getKey()
 {
     int ch = getch();

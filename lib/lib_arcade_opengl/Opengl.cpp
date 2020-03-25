@@ -48,6 +48,13 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
     _window.draw(playerImage);
     _window.draw(playerText);
     _window.popGLStates();
+    if (_id != 0) {
+        // this->drawHero();
+
+        // this->drawObject();
+
+        // this->drawEnnemies();
+    }
     for(; i < config_scene.size(); i++) {
         std::vector<std::string> l_command;
         std::stringstream s_stream(config_scene[i]);
@@ -114,9 +121,6 @@ bool LibOpengl::drawObject()
 {
 
 }
-
-
-
 
 int LibOpengl::getKey()
 {

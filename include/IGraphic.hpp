@@ -25,6 +25,9 @@ class IGraphic {
 
         virtual bool displayScene(std::vector<std::string> config_scene) = 0;
         virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize) = 0;
+        virtual bool drawHero() = 0;
+        virtual bool drawEnnemies() = 0;
+        virtual bool drawObject() = 0;
 
         // Getters
         virtual int getKey() = 0;

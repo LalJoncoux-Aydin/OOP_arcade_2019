@@ -43,5 +43,9 @@ IGames *initGame(IGames *new_game, char *lib_name)
     new_game = createGame();
     new_game->setLibPtr(new_lib);
 
+    if (new_game->getId() != 0) {
+        // Get map
+    }
+
     return new_game;
 }
