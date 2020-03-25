@@ -39,6 +39,7 @@ class IGraphic {
 
     protected :
         void *_lib_ptr;
+        std::string _name;
 };
 
 #endif /* !IGRAPHIC_HPP_ */
