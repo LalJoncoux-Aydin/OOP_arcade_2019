@@ -28,6 +28,9 @@ class Pacman: public IGames {
         virtual int getId() {
             return 1;
         };
+        virtual int getSelected() {
+            return _selected;
+        };
         virtual std::vector<std::string> getMap() {
             return _map;
         };

@@ -29,6 +29,9 @@ class Menu: public IGames {
         virtual int getId() {
             return 0;
         };
+        virtual int getSelected() {
+            return _selected;
+        };
         virtual std::vector<std::string> getMap() {
             return _map;
         };

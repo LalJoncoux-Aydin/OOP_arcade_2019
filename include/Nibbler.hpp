@@ -28,6 +28,9 @@ class Nibbler: public IGames {
         virtual int getId() {
             return 2;
         };
+        virtual int getSelected() {
+            return _selected;
+        };
         virtual std::vector<std::string> getMap() {
             return _map;
         };

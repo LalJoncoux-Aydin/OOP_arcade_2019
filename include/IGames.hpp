@@ -25,6 +25,7 @@ class IGames {
         // Getters
         virtual void *getLibPtr() = 0;
         virtual int getId() = 0;
+        virtual int getSelected() = 0;
         virtual std::vector<std::string> getMap() = 0;
 
         // Setters
@@ -33,6 +34,8 @@ class IGames {
         virtual ~IGames() = default;
     protected:
         void *_lib_ptr;
+
+        int _selected;
 
         std::vector<std::string> config_file;
 

@@ -12,8 +12,10 @@ IGraphic *changeLib(IGraphic *graphical_t, int key)
 
     graphical_t->closeWindow();
     dlclose(graphical_t->getLibPtr());
-    if ((graphical_t = initGraphic(graphical_t, (char *)libs_path[prev_id].c_str())) == NULL)
+    if ((graphical_t = initGraphic(graphical_t, (char *)libs_path[prev_id].c_str())) == NULL) {
+        throw openLibFail();
         return NULL;
+    }
     graphical_t->openWindow();
     return graphical_t;
 }

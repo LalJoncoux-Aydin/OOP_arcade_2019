@@ -20,10 +20,14 @@ std::vector<std::string> Menu::readSceneFile()
 
 void Menu::changeSelection(int selected)
 {
-    if (selected == 2)
+    if (selected == 2) {
         config_path = nibbler_select;
-    if (selected == 3)
+        _selected = 1;
+    }
+    if (selected == 3) {
         config_path = pacman_select;
+        _selected = 2;
+    }
 }
 
 extern "C" IGames *createGame(void)

@@ -19,41 +19,32 @@ bool arcade(char *lib_name)
     if (graphical_t->displayScene(game_t->readSceneFile()) == false)
         return false;
 
-
-
-
     while (_running == true) {
-
+        int new_id = 0;
         int key = graphical_t->getKey();
         // Select and change lib
-        if (key == 6 || key == 7) {
+        if (key == 6 || key == 7)
             if ((graphical_t = changeLib(graphical_t, key)) == NULL)
-                throw openLibFail();
-            if (graphical_t->displayScene(game_t->readSceneFile()) == false)
                 return false;
-        }
-        // Select and change game
+        // Select and change game / restart game
         if (key == 2 || key == 3 || key == 10 || key == 4) {
-            if (game_t->getId() == 0) {
+            if (game_t->getId() == 0)
                 game_t->changeSelection(key);
-            }
-            if (game_t->getId() != 0 || key == 10 || key == 4) {
-                int new_id = game_t->getId() == 1 ? 2 : 1;
+            if (game_t->getId() == 0 && key == 10) {
+                new_id = game_t->getSelected() == 1 ? 2 : 1;
                 if ((game_t = initGame(game_t, (char *)games_path[new_id].c_str())) == NULL)
-                     throw openLibFail();
-                // std::vector<std::string> test = game_t->getMap();
-                // std::cout << test[0] << std::endl;
-            //    std::cout << game_t->getMap()[0] << std::endl;
+                    return false;
             }
-            // displayHero()
+            if (game_t->getId() != 0 || key == 4) {
+                new_id = game_t->getId() == 1 ? 2 : 1;
+                if ((game_t = initGame(game_t, (char *)games_path[new_id].c_str())) == NULL)
+                    return false;
+            }
         }
         // Menu
-        if (key == 4) {
-            if ((game_t = initGame(game_t, (char *)games_path[0].c_str())) == NULL) {
-                throw openLibFail();
+        if (key == 4)
+            if ((game_t = initGame(game_t, (char *)games_path[0].c_str())) == NULL)
                 return false;
-            }
-        }
 
         // Move caracter
 

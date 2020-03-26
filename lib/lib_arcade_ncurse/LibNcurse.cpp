@@ -23,6 +23,10 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene)
     size_t i = 0;
     int c = 0;
 
+    initscr();
+    cbreak();
+    keypad(stdscr, TRUE);
+    getmaxyx(stdscr, _row, _col);
     clear();
     for(; i < config_scene.size(); i++) {
         std::vector<std::string> l_command;
@@ -109,6 +113,8 @@ int LibNcurse::getKey()
             return 6;
         case (KEY_F(7)):
             return 7;
+        case (KEY_ENTER):
+            return 10;
         case (KEY_F(12)):
             return 84;
         case (KEY_LEFT):
