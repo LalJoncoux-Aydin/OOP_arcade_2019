@@ -35,7 +35,7 @@ class LibOpengl: public IGraphic
 
         virtual void cleanScreen();
         bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);
-        bool drawMap();
+        bool drawMap(std::string _letter, int x, int y);
 
         // Getters
         virtual int getKey();
@@ -67,6 +67,18 @@ class LibOpengl: public IGraphic
       sf::Sprite playerFun;
       sf::Texture _texture;
       sf::Texture _texture1;
+      sf::Texture _wallA;
+      sf::Texture _wallB;
+      sf::Texture _wallC;
+      sf::Texture _wallD;
+      sf::Texture _wallL;
+      sf::Texture _wallR;
+      sf::Sprite _sWallA;
+      sf::Sprite _sWallB;
+      sf::Sprite _sWallC;
+      sf::Sprite _sWallD;
+      sf::Sprite _sWallL;
+      sf::Sprite _sWallR;
       sf::Font _font;
 
       void printer();

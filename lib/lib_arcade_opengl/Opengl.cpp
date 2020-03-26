@@ -15,9 +15,26 @@ LibOpengl::LibOpengl()
         std::cerr << "Warning: cannot load regular.tff" << std::endl;
     if (!_texture1.loadFromFile("lib/lib_arcade_opengl/assets/hilary1.jpg", sf::IntRect(0, 0, 3000, 3000)))
         std::cout <<"Error: image not loading" << std::endl;
-
+    if (!_wallA.loadFromFile("lib/lib_arcade_opengl/assets/A_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_wallB.loadFromFile("lib/lib_arcade_opengl/assets/B_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_wallC.loadFromFile("lib/lib_arcade_opengl/assets/C_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_wallD.loadFromFile("lib/lib_arcade_opengl/assets/D_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_wallL.loadFromFile("lib/lib_arcade_opengl/assets/L_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
+    if (!_wallR.loadFromFile("lib/lib_arcade_opengl/assets/R_small.png", sf::IntRect(0, 0, 37, 37)))
+        std::cout <<"Error: image not loading" << std::endl;
     playerImage.setTexture(_texture);
     playerFun.setTexture(_texture1);
+    _sWallA.setTexture(_wallA);
+    _sWallB.setTexture(_wallB);
+    _sWallC.setTexture(_wallC);
+    _sWallD.setTexture(_wallD);
+    _sWallL.setTexture(_wallL);
+    _sWallR.setTexture(_wallR);
 }
 
 int LibOpengl::openWindow()
@@ -51,6 +68,8 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
 {
     size_t i = 0;
     int c = 0;
+    int z = 0;
+    int y = 0;
 
     _window.pushGLStates();
     _window.draw(playerImage);
@@ -72,8 +91,12 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
                 return false;
         }
         if (l_command[0] == "2") {
-            // values
-            // drawMap()
+            for (int x = 0; x != 1036; x += 32) {
+                z++;
+                if (drawMap(l_command[z], x, y) == false)
+                    return false;
+            }
+            y = y + 32;
         }
     }
     _window.display();
@@ -103,9 +126,34 @@ bool LibOpengl::drawText(std::string _text, int pos_x, int pos_y, std::string _c
     return true;
 }
 
-bool LibOpengl::drawMap()
+bool LibOpengl::drawMap(std::string _letter, int x, int y)
 {
-    return true;
+    if (_letter.compare("A") == 0) {
+        _sWallA.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallA);
+        return true;
+    } else if (_letter.compare("B") == 0) {
+        _sWallB.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallB);
+        return true;
+    } else if (_letter.compare("C") == 0) {
+        _sWallC.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallC);
+        return true;
+    } else if (_letter.compare("D") == 0) {
+        _sWallD.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallD);
+        return true;
+    } else if (_letter.compare("L") == 0) {
+        _sWallL.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallL);
+        return true;
+    } else if (_letter.compare("R") == 0) {
+        _sWallR.setPosition(sf::Vector2f(x, y));
+        _window.draw(_sWallR);
+        return true;
+    } else
+        return false;
 }
 
 
