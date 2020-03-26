@@ -31,19 +31,13 @@ class LibOpengl: public IGraphic
         virtual void closeWindow();
 
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void changeColor(int selected);
-
-        virtual void cleanScreen();
-        bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);
+        virtual bool drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize);
         bool drawMap(std::string _letter, int x, int y);
 
         // Getters
         virtual int getKey();
         virtual int getId() {
             return 1;
-        };
-        virtual int getState() {
-            return _state;
         };
         virtual void *getLibPtr() {
             return _lib_ptr;
@@ -55,9 +49,6 @@ class LibOpengl: public IGraphic
         };
 
   private:
-      int _state = 0;
-      void *_lib_ptr;
-
       std::string _name;
       sf::RenderWindow _window;
 

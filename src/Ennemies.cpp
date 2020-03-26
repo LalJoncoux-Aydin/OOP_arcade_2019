@@ -1,13 +1,13 @@
 #include "Ennemies.hpp"
 
-Ennemies::Ennemies {
+Ennemies::Ennemies() {
 
 }
 
-Ennemies::getDamage() {
-    
+void Ennemies::getDamage() {
+
 }
 
-Ennemies::~Ennemies {
+Ennemies::~Ennemies() {
 
 }

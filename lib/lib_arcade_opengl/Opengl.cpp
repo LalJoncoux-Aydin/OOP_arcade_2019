@@ -1,8 +1,5 @@
 #include "LibOpengl.hpp"
-#include <string>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
+
 // Include GLM
 //#include <glm/glm.hpp>
 //using namespace glm;
@@ -47,7 +44,7 @@ int LibOpengl::openWindow()
     playerText.setString("||");
     playerText.setCharacterSize(50);
     playerText.setFillColor(sf::Color::White);
-    playerText.setPosition(800, 300);
+    playerText.setPosition(730, 400);
 
     // effacement les tampons de couleur/profondeur
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -57,11 +54,6 @@ int LibOpengl::openWindow()
 
 void LibOpengl::printer()
 {
-}
-
-void LibOpengl::cleanScreen()
-{
-    _window.display();
 }
 
 bool LibOpengl::displayScene(std::vector<std::string> config_scene)
@@ -75,7 +67,7 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene)
     _window.draw(playerImage);
     _window.draw(playerFun);
     _window.popGLStates();
-    for(; i < config_scene.size() - 1; i++) {
+    for(; i < config_scene.size(); i++) {
         std::vector<std::string> l_command;
         std::stringstream s_stream(config_scene[i]);
         c = 0;
@@ -135,23 +127,23 @@ bool LibOpengl::drawMap(std::string _letter, int x, int y)
 
 bool LibOpengl::drawText(std::string _text, int pos_x, int pos_y, std::string _color, int charSize)
 {
-    sf::Text text((char*)_text.c_str(), _font);
-    text.setPosition(pos_x, pos_y);
-    text.setCharacterSize(charSize);
+    sf::Text _text((char*)_name.c_str(), _font);
+    _text.setPosition(pos_x, pos_y);
+    _text.setCharacterSize(charSize);
     if (_color == "cyan")
-        text.setColor(sf::Color(0, 0, 255, 255));
+        _text.setFillColor(sf::Color(0, 0, 255, 255));
     else if (_color == "white")
-        text.setColor(sf::Color(0, 255, 255, 255));
+        _text.setFillColor(sf::Color(0, 255, 255, 255));
     else if (_color == "pink")
-        text.setColor(sf::Color(0, 255, 105, 180));
+        _text.setFillColor(sf::Color(0, 255, 105, 180));
     else if (_color == "blue")
-        text.setColor(sf::Color(0, 0, 191, 255));
+        _text.setFillColor(sf::Color(0, 0, 191, 255));
     else {
         throw getGraphicFail();
         return false;
     }
     _window.pushGLStates();
-    _window.draw(text);
+    _window.draw(_text);
     _window.popGLStates();
     return true;
 }
@@ -169,27 +161,34 @@ int LibOpengl::getKey()
         } else if (event.type == sf::Event::TextEntered) {
             playerInput += event.text.unicode;
             playerText.setString(playerInput);
-//            displayMenu();
-            //_window.display();
+            return 0;
         }
         else if (event.type == sf::Event::KeyPressed)
         {
-            if (event.key.code == sf::Keyboard::F3) {
-                return 3;
-            }
             if (event.key.code == sf::Keyboard::F4) {
                 return 4;
             }
             if (event.key.code == sf::Keyboard::F5) {
-                return 5;
+                return 6;
             }
             if (event.key.code == sf::Keyboard::F6) {
                 return 6;
             }
-            if (event.key.code == sf::Keyboard::F7)
+            if (event.key.code == sf::Keyboard::F7) {
+                return 7;
+            }
+            if (event.key.code == sf::Keyboard::Left)
+                return 12;
+            if (event.key.code == sf::Keyboard::Right)
+                return 15;
+            if (event.key.code == sf::Keyboard::Down)
+                return 14;
+            if (event.key.code == sf::Keyboard::Up)
+                return 13;
+            if (event.key.code == sf::Keyboard::F3)
+                return 3;
+            if (event.key.code == sf::Keyboard::F2)
                 return 2;
-            if (event.key.code == sf::Keyboard::F8)
-                return 1;
             if (event.key.code == sf::Keyboard::F12) {
                 return 84;
             }
@@ -208,14 +207,6 @@ int LibOpengl::getKey()
             glViewport(0, 0, event.size.width, event.size.height);
     }
     return 0;
-}
-
-void LibOpengl::changeColor(int selected)
-{
-    if (selected == 1)
-        _state = 1;
-    if (selected == 2)
-        _state = 2;
 }
 
 void LibOpengl::closeWindow()

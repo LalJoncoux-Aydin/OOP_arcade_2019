@@ -5,12 +5,6 @@ Menu::Menu()
 
 }
 
-int Menu::startGame()
-{
-    std::cout << "caca" << std::endl;
-    return 0;
-}
-
 std::vector<std::string> Menu::readSceneFile()
 {
     std::string newline;
@@ -22,6 +16,14 @@ std::vector<std::string> Menu::readSceneFile()
         }
     }
     return config_file;
+}
+
+void Menu::changeSelection(int selected)
+{
+    if (selected == 2)
+        config_path = nibbler_select;
+    if (selected == 3)
+        config_path = pacman_select;
 }
 
 extern "C" IGames *createGame(void)

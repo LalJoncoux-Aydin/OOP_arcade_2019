@@ -20,57 +20,7 @@
 class LibSfml: public IGraphic
 {
    public:
-
-    //DEFINE EVENT
-
-        sf::Event _Event;
-
-    //DEFINE WINDOW
-
-        sf::RenderWindow _window;
-
-    //DEFINE STRING
-
-        sf::String _playerInput;
-        std::string _name;
-
-    //DEFINE MUSIC
-
-       // sf::SoundBuffer _buffer;
-        //sf::Sound _sound;
-
-    //DEFINE FONT
-
-        sf::Font _font;
-
-    //DEFINE SPRITE
-
-        sf::Sprite _playerImage;
-
-    //DEFINE TEXTURE
-
-        sf::Texture _pTexture;
-
-    //DEFINE TEXT
-
-        sf::Text _exit;
-        sf::Text _lib1;
-        sf::Text _lib2;
-        sf::Text _lib3;
-        sf::Text _nibbler;
-        sf::Text _pacman;
-        sf::Text _playerText;
-
-    //DEFINE BOOELEN
-
-        bool _isSelected;
-        bool _isSelected2;
-        bool _isSelected3;
-        bool _isSelected4;
-        bool _isSelected5;
-
     //DEFINE PROTOTYPES
-
         LibSfml();
         ~LibSfml() = default;
         virtual int openWindow();
@@ -78,10 +28,7 @@ class LibSfml: public IGraphic
         // void check_mouse_pos(sf::Event::MouseMoveEvent const &mouse, sf::Text &text, bool isSelected);
         // void check_mouse_click(sf::Event const &event, sf::Text &text, bool &isSelected);
         virtual bool displayScene(std::vector<std::string> config_scene);
-        virtual void changeColor(int selected) {};
-
-        virtual void cleanScreen();
-        bool drawText();
+        virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize);
         bool drawMap();
 
         // Getters
@@ -89,19 +36,41 @@ class LibSfml: public IGraphic
         virtual int getId() {
             return 2;
         };
-        virtual int getState() {
-            return _state;
-        };
         virtual void *getLibPtr() {
             return _lib_ptr;
         };
+
+        // Setters
         virtual void setLibPtr(void *new_lib) {
             _lib_ptr = (void *) new_lib;
         };
 
   private:
-      int _state;
-      void *_lib_ptr;
+      //DEFINE EVENT
+      sf::Event _Event;
+      //DEFINE WINDOW
+      sf::RenderWindow _window;
+      //DEFINE STRING
+      sf::String _playerInput;
+      std::string _name;
+      //DEFINE MUSIC
+     // sf::SoundBuffer _buffer;
+      //sf::Sound _sound;
+      //DEFINE FONT
+      sf::Font _font;
+      //DEFINE SPRITE
+      sf::Sprite _playerImage;
+      //DEFINE TEXTURE
+      sf::Texture _pTexture;
+      //DEFINE TEXT
+      sf::Text _exit;
+      sf::Text _playerText;
+      //DEFINE BOOELEN
+      bool _isSelected;
+      bool _isSelected2;
+      bool _isSelected3;
+      bool _isSelected4;
+      bool _isSelected5;
 };
 
 extern "C" IGraphic *createLib();

@@ -43,13 +43,5 @@ IGames *initGame(IGames *new_game, char *lib_name)
     new_game = createGame();
     new_game->setLibPtr(new_lib);
 
-    // Construct map
-
-    // Create Hero
-
-    // Create ennemies
-
-    // Create Obj
-
     return new_game;
 }

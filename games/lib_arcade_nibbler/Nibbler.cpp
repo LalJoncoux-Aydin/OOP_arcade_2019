@@ -2,13 +2,6 @@
 
 Nibbler::Nibbler()
 {
-
-}
-
-int Nibbler::startGame()
-{
-    std::cout << "caca" << std::endl;
-    return 0;
 }
 
 std::vector<std::string> Nibbler::readSceneFile()
@@ -21,6 +14,13 @@ std::vector<std::string> Nibbler::readSceneFile()
             config_file.push_back(newline);
         }
     }
+    // Construct map
+    // for(size_t i = 0; i < config_file.size(); i++) {
+    //     if (config_file[i].at(0) == '2') {
+    //         _map.push_back(config_file[i]);
+    //         std::cout << config_file[i] << std::endl;
+    //     }
+    // }
     return config_file;
 }
 
