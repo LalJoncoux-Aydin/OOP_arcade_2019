@@ -246,7 +246,7 @@ bool LibSfml::displayScene(std::vector<std::string> config_scene, int id, std::v
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies) == false)
+                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
                         return false;
                     nb_ennemies += 1;
                 } else {
@@ -320,7 +320,7 @@ bool LibSfml::displayBody(int x, int y)
     return true;
 }
 
-bool LibSfml::drawEnemies(int x, int y, int index)
+bool LibSfml::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
 {
     if (index == 0) {
         _srouge.setPosition(sf::Vector2f(x, y));

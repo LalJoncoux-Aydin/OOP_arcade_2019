@@ -86,8 +86,10 @@ int Nibbler::move_player(int x, int y)
     size_t randomX = rand()%(31-4 + 1) + 4;
     size_t randomY = rand()%(90 + 1);
 
-    if (config_file[new_player_x][new_player_y] != ' ' && config_file[new_player_x][new_player_y] != '/' && config_file[new_player_x][new_player_y] != 'O')
+    if (config_file[new_player_x][new_player_y] != ' ' && config_file[new_player_x][new_player_y] != '/' && config_file[new_player_x][new_player_y] != 'O') {
+        _player.getDammage();
         return 0;
+    }
 
     config_file[_player.pos_x][_player.pos_y] = '/';
 

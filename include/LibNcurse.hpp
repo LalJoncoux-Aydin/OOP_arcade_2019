@@ -35,7 +35,7 @@ class LibNcurse: public IGraphic
         bool drawMap(int x, int y);
         virtual bool drawPlayer(int x, int y, int id);
         virtual bool drawObject(int x, int y);
-        virtual bool drawEnemies(int x, int y, int index);
+        virtual bool drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list);
         virtual void displayLoose();
         virtual bool displayBody(int x, int y);
         /*virtual void playMusic(void);

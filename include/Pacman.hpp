@@ -86,7 +86,8 @@ class Pacman: public IGames {
         std::vector<Ennemies> ennemies_list;
         int ennemie_out_x = 14;
         int ennemie_out_y = 50;
-        std::vector<int> out_time{150, 450, 650, 850};
+        std::vector<int> out_time{50, 100, 150, 200};
+        int _bonus = 0;
 //        std::vector<int> ennemies_home{46, 50, ,};
 };
 
