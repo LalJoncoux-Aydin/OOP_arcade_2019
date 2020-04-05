@@ -184,6 +184,7 @@ int Pacman::move_player(int x, int y)
 void Pacman::ia_ennemy()
 {
     std::vector<int> posible{0, 0, 0, 0};
+    std::vector<int> last_move{0, 0};
     int v2 = rand() % 3;
 
     for (size_t i = 0; i < ennemies_list.size(); i++) {
@@ -214,19 +215,33 @@ void Pacman::ia_ennemy()
                     posible[3] = 1;
             }
 
+            if (_player.pos_y >= 12 && posible[0] == 1 && posible[1] == 1)
+                posible[0] = 0;
+            else if (_player.pos_y > 12 && posible[0] == 1 && posible[1] == 1)
+                posible[1] = 0;
+            if (_player.pos_x >= 102 && posible[2] == 1 && posible[3] == 1)
+                posible[3] = 0;
+            else if (_player.pos_x > 102 && posible[2] == 1 && posible[3] == 1)
+                posible[2] = 0;
+
             while (posible[v2] != 1)
                 v2 = rand() % 4;
+
             if (v2 == 0) {
+                last_move[1] = -2;
                 move_ennemy(0, -2, i);
             }
+            else if (v2 == 3) {
+                last_move[0] = -1;
+                move_ennemy(-1, 0, i);
+            }
             else if (v2 == 1) {
+                last_move[1] = 2;
                 move_ennemy(0, 2, i);
             }
             else if (v2 == 2) {
+                last_move[0] = 1;
                 move_ennemy(1, 0, i);
-            }
-            else if (v2 == 3) {
-                move_ennemy(-1, 0, i);
             }
         } else {
             ennemies_list[i].e_time = ennemies_list[i].e_time + 1;
@@ -238,16 +253,12 @@ void Pacman::move_ennemy(int x, int y, size_t i)
 {
     int new_player_x = ennemies_list[i].pos_x + x;
     int new_player_y = ennemies_list[i].pos_y + y;
-    //std::cout << "yeah" << std::endl;
-    //std::cout << ennemies_list[i].old_cell << std::endl;
+
     config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y] = ennemies_list[i].old_cell;
+    ennemies_list[i].old_cell = config_file[new_player_x][new_player_y];
     config_file[new_player_x][new_player_y] = 'E';
     ennemies_list[i].pos_x += x;
     ennemies_list[i].pos_y += y;
-    /*std::cout << "move : " << std::endl;
-    std::cout <<     config_file[new_player.pos_x][new_player.pos_y] << std::endl;
-    std::cout << "move" << std::endl;
-    std::cout << config_file[ennemies_pos[ennemi * 2]][ennemies_pos[ennemi * 2 - 1]] << std::endl;*/
 }
 
 void Pacman::writeHighScore(int score, std::string name, int id)
