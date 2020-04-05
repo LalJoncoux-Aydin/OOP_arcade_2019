@@ -185,7 +185,6 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene, int id, std:
     int y = 150;
     int nb_ennemies = 0;
 
-
     _window.pushGLStates();
     _window.draw(playerImage);
     _window.draw(playerFun);
@@ -218,9 +217,8 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene, int id, std:
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies) == false)
+                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
                         return false;
-                    nb_ennemies += 1;
                 } else {
                     if (drawMap(l_command[z][0], x, y) == false)
                         return false;
@@ -297,8 +295,11 @@ bool LibOpengl::displayBody(int x, int y)
 
 }
 
-bool LibOpengl::drawEnemies(int x, int y, int index)
+bool LibOpengl::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
 {
+    // for (size_t i = 0; i < ennemies_list.size(); i++) {
+    //     if (ennemies_list[i].pos_x == x)
+    // }
     if (index == 0) {
         _srouge.setPosition(sf::Vector2f(x, y));
         _window.pushGLStates();

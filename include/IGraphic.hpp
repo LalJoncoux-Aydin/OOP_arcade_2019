@@ -29,7 +29,7 @@ class IGraphic {
         virtual bool drawText(std::string _name, int pos_x, int pos_y, std::string _color, int charSize) = 0;
         virtual bool drawPlayer(int x, int y, int id) = 0;
         virtual bool drawObject(int x, int y) = 0;
-        virtual bool drawEnemies(int x, int y, int index) = 0;
+        virtual bool drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list) = 0;
         virtual void displayLoose() = 0;
        /* virtual void playMusic(void) = 0;
         virtual void breakMusic(void) = 0;

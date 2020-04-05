@@ -64,7 +64,7 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene, __attribute_
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies) == false)
+                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
                         return false;
                     nb_ennemies += 1;
                 } else if (l_command[z] != " " && l_command[z] != "@") {
@@ -137,7 +137,8 @@ bool LibNcurse::drawObject(int x, int y) {
     return true;
 }
 
-bool LibNcurse::drawEnemies(int x, int y, int index) {
+bool LibNcurse::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
+{
     start_color();
     init_pair(1, COLOR_WHITE, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
