@@ -3,24 +3,6 @@
 Pacman::Pacman()
 {
 }
-//
-// if (ennemi == 1) {
-//     config_file[16][46] = ' ';
-//     config_file[14][46] = 'E';
-//     //ennemies_list[0] = Ennemies(16, 46);
-// }
-// if (ennemi == 2) {
-//     config_file[16][50] = ' ';
-//     config_file[14][50] = 'E';
-// }
-// if (ennemi == 3) {
-//     config_file[16][54] = ' ';
-//     config_file[14][54] = 'E';
-// }
-// if (ennemi == 4) {
-//     config_file[16][58] = ' ';
-//     config_file[14][58] = 'E';
-// }
 
 std::vector<std::string> Pacman::readSceneFile()
 {

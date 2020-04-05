@@ -60,7 +60,7 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene, __attribute_
                 } else if (l_command[z] == "/") {
                     if (displayBody(x, y) == false)
                         return false;
-                } else if(l_command[z] == "O") {
+                } else if(l_command[z] == "0") {
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
