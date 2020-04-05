@@ -56,4 +56,13 @@ class dlOpenFail: public std::exception
     }
 };
 
+class uncorrectMap: public std::exception
+{
+    public:
+    virtual const char* what() const throw()
+    {
+        return "Map filled with uncorrect caracters or empty";
+    }
+};
+
 #endif /* !EXCEPTION_HPP_ */

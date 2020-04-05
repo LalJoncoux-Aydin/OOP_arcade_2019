@@ -1,0 +1,10 @@
+1,Arcade,840,100,white,80
+1,Menu,900,280,white,70
+1,Player name :,300,400,white,50
+1,Highscore :,300,500,white,50
+1,0,650,500,white,50
+1,NCurse,300,600,pink,50
+1,OpenGl,900,600,pink,50
+1,SFML,1460,600,pink,50
+1,Pacman,890,700,pink,50
+1,Nibbler,890,800,pink,50

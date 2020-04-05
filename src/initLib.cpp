@@ -19,13 +19,12 @@ IGraphic *initGraphic(IGraphic *new_graph, char *lib_name)
 
     if ((new_lib = openLib(lib_name)) == NULL)
         return NULL;
-
-    if ((createLib = (fptr_file) dlsym(new_lib, "createLib")) == NULL)
+    if ((createLib = (fptr_file) dlsym(new_lib, "createLib")) == NULL) {
+        throw openLibFail();
         return NULL;
-
+    }
     new_graph = createLib();
     new_graph->setLibPtr(new_lib);
-
     return new_graph;
 }
 
@@ -36,12 +35,11 @@ IGames *initGame(IGames *new_game, char *lib_name)
 
     if ((new_lib = openLib(lib_name)) == NULL)
         return NULL;
-
-    if ((createGame = (fptr_game) dlsym(new_lib, "createGame")) == NULL)
+    if ((createGame = (fptr_game) dlsym(new_lib, "createGame")) == NULL) {
+        throw openLibFail();
         return NULL;
-
+    }
     new_game = createGame();
     new_game->setLibPtr(new_lib);
-
     return new_game;
 }

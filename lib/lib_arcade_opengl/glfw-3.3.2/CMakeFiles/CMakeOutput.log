@@ -1,0 +1,304 @@
+The system is: Linux - 4.20.6-100.fc28.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/3.11.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8b90a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8b90a.dir/build.make CMakeFiles/cmTC_8b90a.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8b90a.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8b90a.dir/testCCompiler.c.o   -c /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_8b90a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b90a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8b90a.dir/testCCompiler.c.o  -o cmTC_8b90a 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_7d61e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_7d61e.dir/build.make CMakeFiles/cmTC_7d61e.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_7d61e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d61e.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o  -o cmTC_7d61e 
+Utilisation des specs internes.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Cible : x86_64-redhat-linux
+Configuré avec: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Modèle de thread: posix
+gcc version 8.2.1 20181215 (Red Hat 8.2.1-6) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7d61e' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cchLHnhS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7d61e /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/8 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7d61e' '-mtune=generic' '-march=x86-64'
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_7d61e/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_7d61e.dir/build.make CMakeFiles/cmTC_7d61e.dir/build]
+  ignore line: [gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_7d61e]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d61e.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o  -o cmTC_7d61e ]
+  ignore line: [Utilisation des specs internes.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Cible : x86_64-redhat-linux]
+  ignore line: [Configuré avec: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --enable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Modèle de thread: posix]
+  ignore line: [gcc version 8.2.1 20181215 (Red Hat 8.2.1-6) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_7d61e' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cchLHnhS.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7d61e /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/8 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/8/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cchLHnhS.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_7d61e] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../..]
+    arg [CMakeFiles/cmTC_7d61e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8] ==> [/usr/lib/gcc/x86_64-redhat-linux/8]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/8;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_22ab7/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_22ab7.dir/build.make CMakeFiles/cmTC_22ab7.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_22ab7.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_22ab7.dir/feature_tests.c.o   -c /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_22ab7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22ab7.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_22ab7.dir/feature_tests.c.o  -o cmTC_22ab7 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_6f853/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_6f853.dir/build.make CMakeFiles/cmTC_6f853.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_6f853.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_6f853.dir/feature_tests.c.o   -c /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6f853
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f853.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6f853.dir/feature_tests.c.o  -o cmTC_6f853 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_49c5f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_49c5f.dir/build.make CMakeFiles/cmTC_49c5f.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_49c5f.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_49c5f.dir/feature_tests.c.o   -c /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_49c5f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49c5f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_49c5f.dir/feature_tests.c.o  -o cmTC_49c5f 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e4e87/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e4e87.dir/build.make CMakeFiles/cmTC_e4e87.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_e4e87.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e4e87.dir/CheckIncludeFile.c.o   -c /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e4e87
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4e87.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e4e87.dir/CheckIncludeFile.c.o  -o cmTC_e4e87 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_52f23/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_52f23.dir/build.make CMakeFiles/cmTC_52f23.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_52f23.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_52f23.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_52f23
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52f23.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_52f23.dir/CheckFunctionExists.c.o  -o cmTC_52f23 -lpthread 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib64/libX11.so;/usr/lib64/libXext.so passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_cb855/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_cb855.dir/build.make CMakeFiles/cmTC_cb855.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_cb855.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_cb855.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cb855
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb855.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    -rdynamic CMakeFiles/cmTC_cb855.dir/CheckFunctionExists.c.o  -o cmTC_cb855 /usr/lib64/libX11.so /usr/lib64/libXext.so 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_0914c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_0914c.dir/build.make CMakeFiles/cmTC_0914c.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_0914c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_0914c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0914c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0914c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname    -rdynamic CMakeFiles/cmTC_0914c.dir/CheckFunctionExists.c.o  -o cmTC_0914c 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_9f58c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9f58c.dir/build.make CMakeFiles/cmTC_9f58c.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_9f58c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_9f58c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9f58c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f58c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_9f58c.dir/CheckFunctionExists.c.o  -o cmTC_9f58c 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_27f97/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_27f97.dir/build.make CMakeFiles/cmTC_27f97.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_27f97.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_27f97.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_27f97
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27f97.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove    -rdynamic CMakeFiles/cmTC_27f97.dir/CheckFunctionExists.c.o  -o cmTC_27f97 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8a1be/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8a1be.dir/build.make CMakeFiles/cmTC_8a1be.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8a1be.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_8a1be.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8a1be
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a1be.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat    -rdynamic CMakeFiles/cmTC_8a1be.dir/CheckFunctionExists.c.o  -o cmTC_8a1be 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8b635/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8b635.dir/build.make CMakeFiles/cmTC_8b635.dir/build
+gmake[1] : on entre dans le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8b635.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_8b635.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8b635
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b635.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    -rdynamic CMakeFiles/cmTC_8b635.dir/CheckFunctionExists.c.o  -o cmTC_8b635 -lICE 
+gmake[1] : on quitte le répertoire « /home/zoe/epitech/OOP/cococ/OOP_arcade_2019/lib/lib_arcade_opengl/glfw-3.3.2/CMakeFiles/CMakeTmp »
+
+

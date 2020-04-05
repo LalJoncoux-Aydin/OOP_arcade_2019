@@ -27,7 +27,7 @@ NAME	=	lib_arcade_ncurse.so
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) -shared -o $(NAME) $(OBJ) -lncurses
+	$(CXX) -shared -o $(NAME) $(OBJ) -lncurses -lsfml-audio
 
 clean:
 	$(RM) $(OBJ)

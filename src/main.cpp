@@ -7,7 +7,7 @@ int main(int ac, char **argv)
         return 84;
     }
     if (strcmp(argv[1], "-h") == 0) {
-        std::cout << "How to use the arcade :\n ./arcade ./the_library_you_want -> ex:./arcade lib_arcade_opengl.so" << std::endl;
+        std::cout << HELP << std::endl;
         return 0;
     }
     try

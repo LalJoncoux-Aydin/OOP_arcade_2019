@@ -24,13 +24,14 @@
 #include "Nibbler.hpp"
 #include "Pacman.hpp"
 #include "Menu.hpp"
+#include "Help.hpp"
 
 #include "initLib.hpp"
-#include "changeLib.hpp"
+#include "selectLib.hpp"
 #include "arcade_exception.hpp"
 
 static std::vector<std::string> libs_path = {"./lib/lib_arcade_ncurse/lib_arcade_ncurse.so", "./lib/lib_arcade_opengl/lib_arcade_opengl.so", "./lib/lib_arcade_sfml/lib_arcade_sfml.so"};
-static std::vector<std::string> games_path = {"./games/lib_menu/lib_menu.so", "./games/lib_arcade_nibbler/lib_arcade_nibbler.so", "./games/lib_arcade_pacman/lib_arcade_pacman.so"};
+static std::vector<std::string> games_path = {"./games/lib_arcade_menu/lib_arcade_menu.so", "./games/lib_arcade_nibbler/lib_arcade_nibbler.so", "./games/lib_arcade_pacman/lib_arcade_pacman.so"};
 
 bool arcade(char *lib_name);
 

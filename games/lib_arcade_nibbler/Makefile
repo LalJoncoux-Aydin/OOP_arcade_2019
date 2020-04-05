@@ -12,7 +12,7 @@ CXX ?= g++
 
 RM	?=	rm -f
 
-SRC	=	Nibbler.cpp 		\
+SRC	=	Nibbler.cpp 				\
 
 # Flags
 CXXFLAGS	=	 -Wall -Wextra -W -c -fpic

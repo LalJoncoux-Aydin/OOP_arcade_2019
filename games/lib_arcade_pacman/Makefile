@@ -12,7 +12,8 @@ CXX ?= g++
 
 RM	?=	rm -f
 
-SRC	=	Pacman.cpp 		\
+SRC	=	Pacman.cpp 					\
+		../../src/Ennemies.cpp		\
 
 # Flags
 CXXFLAGS	=	 -Wall -Wextra -W -c -fpic
