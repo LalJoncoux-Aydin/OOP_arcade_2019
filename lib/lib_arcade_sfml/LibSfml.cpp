@@ -217,7 +217,6 @@ bool LibSfml::displayScene(std::vector<std::string> config_scene, int id, std::v
 {
     int x = 150;
     int y = 150;
-    int nb_ennemies = 0;
 
     _window.draw(_playerImage);
     for(size_t i = 0; i < config_scene.size(); i++) {
@@ -246,9 +245,8 @@ bool LibSfml::displayScene(std::vector<std::string> config_scene, int id, std::v
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
+                    if (drawEnemies(x, y, ennemies_list, i, z) == false)
                         return false;
-                    nb_ennemies += 1;
                 } else {
                     if (drawMap(l_command[z][0], x, y) == false)
                         return false;
@@ -320,23 +318,33 @@ bool LibSfml::displayBody(int x, int y)
     return true;
 }
 
-bool LibSfml::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
+bool LibSfml::drawEnemies(int x, int y, std::vector<Ennemies> ennemies_list, int ennemie_x, int ennemie_y)
 {
-    if (index == 0) {
-        _srouge.setPosition(sf::Vector2f(x, y));
-        _window.draw(_srouge);
-    }
-    if (index == 1) {
-        _spink.setPosition(sf::Vector2f(x, y));
-        _window.draw(_spink);
-    }
-    if (index == 2) {
-        _sblue.setPosition(sf::Vector2f(x, y));
-        _window.draw(_sblue);
-    }
-    if (index == 3) {
-        _sorange.setPosition(sf::Vector2f(x, y));
-        _window.draw(_sorange);
+    for (size_t i = 0; i < ennemies_list.size(); i++) {
+        if ((ennemies_list[i].pos_x == ennemie_x && ennemies_list[i].pos_y == ennemie_y * 2) ||
+            (ennemies_list[i].home_x == ennemie_x && ennemies_list[i].home_y == ennemie_y * 2)) {
+
+            if (i == 0) {
+                _srouge.setPosition(sf::Vector2f(x, y));
+                _window.draw(_srouge);
+                return true;
+            }
+            if (i == 1) {
+                _spink.setPosition(sf::Vector2f(x, y));
+                _window.draw(_spink);
+                return true;
+            }
+            if (i == 2) {
+                _sblue.setPosition(sf::Vector2f(x, y));
+                _window.draw(_sblue);
+                return true;
+            }
+            if (i == 3) {
+                _sorange.setPosition(sf::Vector2f(x, y));
+                _window.draw(_sorange);
+                return true;
+            }
+        }
     }
     return true;
 }

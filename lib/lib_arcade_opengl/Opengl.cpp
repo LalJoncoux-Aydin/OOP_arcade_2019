@@ -183,7 +183,6 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene, int id, std:
 {
     int x = 150;
     int y = 150;
-    int nb_ennemies = 0;
 
     _window.pushGLStates();
     _window.draw(playerImage);
@@ -217,7 +216,7 @@ bool LibOpengl::displayScene(std::vector<std::string> config_scene, int id, std:
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
+                    if (drawEnemies(x, y, ennemies_list, i, z) == false)
                         return false;
                 } else {
                     if (drawMap(l_command[z][0], x, y) == false)
@@ -295,34 +294,41 @@ bool LibOpengl::displayBody(int x, int y)
 
 }
 
-bool LibOpengl::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
+bool LibOpengl::drawEnemies(int x, int y, std::vector<Ennemies> ennemies_list, int ennemie_x, int ennemie_y)
 {
-    // for (size_t i = 0; i < ennemies_list.size(); i++) {
-    //     if (ennemies_list[i].pos_x == x)
-    // }
-    if (index == 0) {
-        _srouge.setPosition(sf::Vector2f(x, y));
-        _window.pushGLStates();
-        _window.draw(_srouge);
-        _window.popGLStates();
-    }
-    if (index == 1) {
-        _spink.setPosition(sf::Vector2f(x, y));
-        _window.pushGLStates();
-        _window.draw(_spink);
-        _window.popGLStates();
-    }
-    if (index == 2) {
-        _sblue.setPosition(sf::Vector2f(x, y));
-        _window.pushGLStates();
-        _window.draw(_sblue);
-        _window.popGLStates();
-    }
-    if (index == 3) {
-        _sorange.setPosition(sf::Vector2f(x, y));
-        _window.pushGLStates();
-        _window.draw(_sorange);
-        _window.popGLStates();
+    for (size_t i = 0; i < ennemies_list.size(); i++) {
+        if ((ennemies_list[i].pos_x == ennemie_x && ennemies_list[i].pos_y == ennemie_y * 2) ||
+            (ennemies_list[i].home_x == ennemie_x && ennemies_list[i].home_y == ennemie_y * 2))    {
+
+            if (i == 0) {
+                _srouge.setPosition(sf::Vector2f(x, y));
+                _window.pushGLStates();
+                _window.draw(_srouge);
+                _window.popGLStates();
+                return true;
+            }
+            if (i == 1) {
+                _spink.setPosition(sf::Vector2f(x, y));
+                _window.pushGLStates();
+                _window.draw(_spink);
+                _window.popGLStates();
+                return true;
+            }
+            if (i == 2) {
+                _sblue.setPosition(sf::Vector2f(x, y));
+                _window.pushGLStates();
+                _window.draw(_sblue);
+                _window.popGLStates();
+                return true;
+            }
+            if (i == 3) {
+                _sorange.setPosition(sf::Vector2f(x, y));
+                _window.pushGLStates();
+                _window.draw(_sorange);
+                _window.popGLStates();
+                return true;
+            }
+        }
     }
     return true;
 }
