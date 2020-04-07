@@ -17,7 +17,6 @@ SRC	=	main.cpp			\
 		arcade.cpp			\
 		initLib.cpp			\
 		selectLib.cpp		\
-		Ennemies.cpp		\
 
 SRC_FILE	=	$(addprefix ./src/, $(SRC))
 

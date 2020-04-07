@@ -23,7 +23,6 @@ class IGames {
 
         virtual int move_player(int x, int y) = 0;
         virtual int addGameInfo() = 0;
-        virtual void move_ennemy(int x, int y, size_t i) = 0;
         virtual void ia_ennemy() = 0;
 
         virtual bool checkWalls(std::string newline) = 0;

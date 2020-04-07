@@ -13,7 +13,7 @@
 class Ennemies {
     public:
 
-        Ennemies();
+        Ennemies() {};
 
         int pos_x;
         int pos_y;
@@ -21,6 +21,7 @@ class Ennemies {
         int home_y;
         char old_cell = ' ';
         int e_time;
+        int _direction;
 
         void getDammage() {
             _pv = _pv - 1;
@@ -34,7 +35,7 @@ class Ennemies {
             pos_y = posy;
         }
 
-        ~Ennemies();
+        ~Ennemies() {};
     private:
         int _pv = 1;
 

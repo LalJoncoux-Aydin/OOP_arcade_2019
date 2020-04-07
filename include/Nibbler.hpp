@@ -25,7 +25,6 @@ class Nibbler: public IGames {
         virtual int move_player(int x, int y);
         virtual int addGameInfo();
         virtual bool checkWalls(std::string newline);
-        virtual void move_ennemy(__attribute__((unused))int x, __attribute__((unused))int y, __attribute__((unused)) size_t i) {};
         virtual void writeHighScore(int score, std::string name, int id);
         virtual void ia_ennemy() {};
         // Getters

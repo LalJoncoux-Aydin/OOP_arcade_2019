@@ -38,9 +38,9 @@ class Pacman: public IGames {
         virtual int addGameInfo();
         virtual bool checkWalls(std::string newline);
         int getNbObject();
-        virtual void move_ennemy(int x, int y, size_t i);
         virtual void writeHighScore(int score, std::string name, int id);
         virtual void ia_ennemy();
+        void move_ennemy(int i);
         // Getters
         virtual void *getLibPtr() {
             return _lib_ptr;

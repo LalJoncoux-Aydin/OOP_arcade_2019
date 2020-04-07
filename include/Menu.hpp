@@ -30,7 +30,6 @@ class Menu: public IGames {
         virtual int addGameInfo() {
             return 0;
         };
-        virtual void move_ennemy(__attribute__((unused))int x, __attribute__((unused))int y, __attribute__((unused))size_t i) {};
         virtual void writeHighScore(int score, std::string name, int id);
         virtual void ia_ennemy(){};
 
