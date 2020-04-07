@@ -41,5 +41,7 @@ IGames *initGame(IGames *new_game, char *lib_name)
     }
     new_game = createGame();
     new_game->setLibPtr(new_lib);
+    if (new_game->getId() != 0)
+        new_game->getPlayer().setPv(new_game->getPv());
     return new_game;
 }

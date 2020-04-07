@@ -325,6 +325,8 @@ void Pacman::writeHighScore(int score, std::string name, int id)
     config_file.clear();
     _player.setPv(5);
     _player.setScore(0);
+    _player.setDirectionX(0);
+    _player.setDirectionY(0);
 }
 
 extern "C" IGames *createGame(void)

@@ -46,6 +46,9 @@ class Nibbler: public IGames {
         virtual Player getPlayer() {
             return _player;
         };
+        virtual int getPv() {
+            return 1;
+        };
 
         virtual std::vector<Ennemies> getEnnemiesList() {
             return _ennemies_list;
