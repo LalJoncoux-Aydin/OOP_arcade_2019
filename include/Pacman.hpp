@@ -40,7 +40,7 @@ class Pacman: public IGames {
         int getNbObject();
         virtual void writeHighScore(int score, std::string name, int id);
         virtual void ia_ennemy();
-        void move_ennemy(int i, std::vector<int> posible, int nb_pos);
+        void move_ennemy(int i);
 
         // Getters
         virtual void *getLibPtr() {
