@@ -178,11 +178,12 @@ int Pacman::move_player(int x, int y)
     return 0;
 }
 
-void Pacman::move_ennemy(int i)
+void Pacman::move_ennemy(int i, std::vector<int> posible, int nb_pos)
 {
     if (ennemies_list[i]._direction == 1 &&
         (config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == ' ' ||
-        config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '0')) {
+        config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '0' ||
+            config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '_')) {
 
         std::cout << "top" << std::endl;
         ennemies_list[i].old_cell = config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y];
@@ -191,7 +192,8 @@ void Pacman::move_ennemy(int i)
         ennemies_list[i].pos_x -= 1;
     } else if (ennemies_list[i]._direction == 2 &&
         (config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == ' ' ||
-        config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '0')) {
+        config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '0' ||
+            config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '_')) {
 
         std::cout << "bot" << std::endl;
         ennemies_list[i].old_cell = config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y];
@@ -200,7 +202,8 @@ void Pacman::move_ennemy(int i)
         ennemies_list[i].pos_x += 1;
     } else if (ennemies_list[i]._direction == 3 &&
         (config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == ' ' ||
-        config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == '0')) {
+        config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == '0' ||
+            config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '_')) {
 
         std::cout << "left" << std::endl;
         ennemies_list[i].old_cell = config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2];
@@ -209,7 +212,8 @@ void Pacman::move_ennemy(int i)
         ennemies_list[i].pos_y -= 2;
     } else if (ennemies_list[i]._direction == 4 &&
         (config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == ' ' ||
-        config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '0')) {
+        config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '0' ||
+            config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '_')) {
 
         std::cout << "right" << std::endl;
         ennemies_list[i].old_cell = config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2];
@@ -235,26 +239,30 @@ void Pacman::ia_ennemy()
 
             // Find possibilities
             if ((config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == ' ' ||
-                config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '0') && ennemies_list[i]._direction != 2) {
+                config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '0' ||
+                    config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] == '_') && ennemies_list[i]._direction != 2) {
                     std::cout << "i can go top   " << config_file[ennemies_list[i].pos_x - 1][ennemies_list[i].pos_y] << std::endl;
                     posible.push_back(1);
                     nb_pos += 1;
             }
             if ((config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == ' ' ||
-                config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '0') &&
+                config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '0' ||
+                    config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] == '_') &&
                 (ennemies_list[i].pos_x != 14 && ennemies_list[i].pos_y != 52) && ennemies_list[i]._direction != 1) {
                     std::cout << "i can go bot   " << config_file[ennemies_list[i].pos_x + 1][ennemies_list[i].pos_y] << std::endl;
                     posible.push_back(2);
                     nb_pos += 1;
             }
             if ((config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == ' ' ||
-                config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == '0') && ennemies_list[i]._direction != 4) {
+                config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == '0' ||
+                    config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] == '_') && ennemies_list[i]._direction != 4) {
                     std::cout << "i can go left   " << config_file[ennemies_list[i].pos_x ][ennemies_list[i].pos_y + 2] << std::endl;
                     posible.push_back(3);
                     nb_pos += 1;
             }
             if ((config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == ' ' ||
-                config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '0') && ennemies_list[i]._direction != 3) {
+                config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '0' ||
+                    config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y + 2] == '_') && ennemies_list[i]._direction != 3) {
                     std::cout << "i can go right  " << config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y - 2] << std::endl;
                     posible.push_back(4);
                     nb_pos += 1;
@@ -267,10 +275,12 @@ void Pacman::ia_ennemy()
 
                 // Change direction
                 ennemies_list[i]._direction = posible[v2];
+            } else {
+                ennemies_list[i]._direction = posible[0];
             }
             nb_pos = 0;
 
-            move_ennemy(i);
+            move_ennemy(i, posible, nb_pos);
 
         } else {
             ennemies_list[i].e_time = ennemies_list[i].e_time + 1;
