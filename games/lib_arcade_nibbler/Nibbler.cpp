@@ -121,8 +121,10 @@ int Nibbler::move_player(int x, int y)
         config_file[pos_x][pos_y] = ' ';
 
     } else if (config_file[new_player_x][new_player_y] == 'O') {
-        while (randomY > config_file[_player.pos_x].size() || (randomY < config_file[_player.pos_x].size() && config_file[_player.pos_x][randomY] != ' ')) {
-            randomX = rand()%(31-4 + 1) + 4;
+        randomX = rand()%(29-4 + 1) + 4;
+        randomY = rand()%(90 + 1);
+        while (config_file[randomX][randomY] != ' ') {
+            randomX = rand()%(29-4 + 1) + 4;
             randomY = rand()%(90 + 1);
         }
         config_file[randomX][randomY] = 'O';
