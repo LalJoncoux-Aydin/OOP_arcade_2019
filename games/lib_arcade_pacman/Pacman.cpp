@@ -25,6 +25,7 @@ std::vector<std::string> Pacman::readSceneFile()
                     if (newline[z] == 'P') {
                         _player.pos_x = x - 1;
                         _player.pos_y = z;
+                        _player._pv = 5;
                     }
                     if (checkWalls(newline) == false) {
                         throw uncorrectMap();

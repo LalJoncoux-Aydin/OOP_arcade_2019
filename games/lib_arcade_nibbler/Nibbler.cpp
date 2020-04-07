@@ -21,6 +21,7 @@ std::vector<std::string> Nibbler::readSceneFile()
                     if (newline[z] == 'P') {
                         _player.pos_x = x - 1;
                         _player.pos_y = y;
+                        _player._pv = 1;
                     }
                     if (newline[z] == 'E') {
                         throw uncorrectMap();
