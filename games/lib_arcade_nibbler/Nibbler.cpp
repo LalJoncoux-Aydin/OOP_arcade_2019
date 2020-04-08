@@ -74,11 +74,6 @@ int Nibbler::addGameInfo()
     return 0;
 }
 
-static void check_for_slash()
-{
-
-}
-
 int Nibbler::move_player(int x, int y)
 {
     int new_player_y = _player.pos_y + y;
