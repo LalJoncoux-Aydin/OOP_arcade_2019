@@ -153,6 +153,7 @@ int Pacman::move_player(int x, int y)
             for (size_t i = 0; i < ennemies_list.size(); i++) {
                 if (ennemies_list[i].pos_x == new_player_x && ennemies_list[i].pos_y == new_player_y) {
                     ennemies_list[i].e_time = 0;
+                    config_file[ennemies_list[i].pos_x][ennemies_list[i].pos_y] = ' ';
                     ennemies_list[i].pos_x = ennemies_list[i].home_x;
                     ennemies_list[i].pos_y = ennemies_list[i].home_y;
                     config_file[ennemies_list[i].home_x][ennemies_list[i].home_y] = 'E';
