@@ -123,12 +123,18 @@ int Pacman::move_player(int x, int y)
     if (config_file[new_player_x][new_player_y] == '_') {
         _player.setInterract(true);
         _player.pickObject();
+        for (size_t i = 0; i < ennemies_list.size(); i++) {
+            ennemies_list[i]._vulnerable = true;
+        }
     }
     if (_player._interract == true) {
         _bonus += 1;
         if (_bonus == 150) {
             _player.setInterract(false);
             _bonus = 0;
+            for (size_t i = 0; i < ennemies_list.size(); i++) {
+                ennemies_list[i]._vulnerable = false;
+            }
         }
     }
     // collision with ennemies
@@ -141,17 +147,17 @@ int Pacman::move_player(int x, int y)
             std::cout << "I DIE" << std::endl;
             return 0;
         } else if (_player._interract == true) {
-            // ENNEMIES GET DAMAGE
-            // loop in ennemies array
-            // for (size_t i = 0; i < ennemies_list.size(); i++) {
-            //     if (ennemies_list[i].pos_x == new_player_x && ennemies_list[i].pos_y == new_player_y) {
-            //         std::cout << new_player_x << std::endl;
-            //         std::cout << new_player_y << std::endl;
-            //         // ennemies.getDammage();
-            //         // ennemies.setPosX(ennemie_out_x);
-            //         // ennemies.setPosY(ennemie_out_t);
-            //     }
-            // }
+            // Teleport ennemies
+            for (size_t i = 0; i < ennemies_list.size(); i++) {
+                if (ennemies_list[i].pos_x == new_player_x && ennemies_list[i].pos_y == new_player_y) {
+                    ennemies_list[i].e_time = 0;
+                    ennemies_list[i].pos_x = ennemies_list[i].home_x;
+                    ennemies_list[i].pos_y = ennemies_list[i].home_y;
+                    config_file[ennemies_list[i].home_x][ennemies_list[i].home_y] = 'E';
+                    config_file[new_player_x][new_player_y] = ennemies_list[i].old_cell;
+                    ennemies_list[i].old_cell = ' ';
+                }
+            }
         }
     }
 

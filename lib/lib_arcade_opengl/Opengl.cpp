@@ -266,11 +266,8 @@ bool LibOpengl::drawPlayer(int x, int y, int id)
     if (id == 1) {
         _window.setFramerateLimit(10);
         _shead.setPosition(sf::Vector2f(x, y));
-        //_sbody.setPosition(x - 1, y + 15);
-      // _sbody.setPosition(x - 1, y - 28);
         _window.pushGLStates();
         _window.draw(_shead);
-       // _window.draw(_sbody);
         _window.popGLStates();
         return (true);
     }
@@ -300,28 +297,30 @@ bool LibOpengl::drawEnemies(int x, int y, std::vector<Ennemies> ennemies_list, i
         if ((ennemies_list[i].pos_x == ennemie_x && ennemies_list[i].pos_y == ennemie_y * 2) ||
             (ennemies_list[i].home_x == ennemie_x && ennemies_list[i].home_y == ennemie_y * 2))    {
 
-            if (i == 0) {
+            if (ennemies_list[i]._vulnerable == true) {
+                _sdied.setPosition(sf::Vector2f(x, y));
+                _window.pushGLStates();
+                _window.draw(_sdied);
+                _window.popGLStates();
+            } else if (i == 0) {
                 _srouge.setPosition(sf::Vector2f(x, y));
                 _window.pushGLStates();
                 _window.draw(_srouge);
                 _window.popGLStates();
                 return true;
-            }
-            if (i == 1) {
+            } else if (i == 1) {
                 _spink.setPosition(sf::Vector2f(x, y));
                 _window.pushGLStates();
                 _window.draw(_spink);
                 _window.popGLStates();
                 return true;
-            }
-            if (i == 2) {
+            } else if (i == 2) {
                 _sblue.setPosition(sf::Vector2f(x, y));
                 _window.pushGLStates();
                 _window.draw(_sblue);
                 _window.popGLStates();
                 return true;
-            }
-            if (i == 3) {
+            } else if (i == 3) {
                 _sorange.setPosition(sf::Vector2f(x, y));
                 _window.pushGLStates();
                 _window.draw(_sorange);

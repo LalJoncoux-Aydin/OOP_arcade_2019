@@ -22,6 +22,7 @@ class Ennemies {
         char old_cell = ' ';
         int e_time;
         int _direction;
+        bool _vulnerable = false;
 
         void getDammage() {
             _pv = _pv - 1;
