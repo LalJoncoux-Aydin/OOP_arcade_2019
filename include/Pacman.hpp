@@ -41,6 +41,7 @@ class Pacman: public IGames {
         virtual void writeHighScore(int score, std::string name, int id);
         virtual void ia_ennemy();
         void move_ennemy(int i);
+        void restartEnnemies();
 
         // Getters
         virtual void *getLibPtr() {
