@@ -11,6 +11,8 @@ std::vector<std::string> Pacman::readSceneFile()
     int x = 0;
 
     if (stream_name) {
+        config_file.clear();
+        ennemies_list.clear();
         while (std::getline(stream_name, newline)) {
             x++;
             if (newline[0] == '2') {
@@ -20,6 +22,9 @@ std::vector<std::string> Pacman::readSceneFile()
                         Ennemies _new_ennemie;
                         _new_ennemie.home_x = x - 1;
                         _new_ennemie.home_y = z;
+                        _new_ennemie.pos_x = x - 1;
+                        _new_ennemie.pos_y = z;
+                        _new_ennemie.e_time = 0;
                         ennemies_list.push_back(_new_ennemie);
                     }
                     if (newline[z] == 'P') {
@@ -141,10 +146,7 @@ int Pacman::move_player(int x, int y)
     if (config_file[new_player_x][new_player_y] == 'E') {
         if (_player._interract == false) {
             _player.getDammage();
-            config_file.clear();
-            ennemies_list.clear();
             config_file = readSceneFile();
-            std::cout << "I DIE" << std::endl;
             return 0;
         } else if (_player._interract == true) {
             // Teleport ennemies
