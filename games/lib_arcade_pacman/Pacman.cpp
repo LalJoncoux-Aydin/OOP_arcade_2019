@@ -74,8 +74,6 @@ int Pacman::addGameInfo()
 
     // Check for left pv
     if (_player._pv == 0) {
-        config_file.clear();
-        config_file = readSceneFile();
         _player.setPv(5);
         _player.setScore(0);
         return 1;
@@ -109,15 +107,6 @@ int Pacman::addGameInfo()
     return 0;
 }
 
-void Pacman::restartEnnemies()
-{
-    for (size_t i = 0; i < ennemies_list.size(); i++) {
-        ennemies_list[i].e_time = 0;
-        ennemies_list[i].pos_x = ennemies_list[i].home_x;
-        ennemies_list[i].pos_y = ennemies_list[i].home_y;
-    }
-}
-
 int Pacman::move_player(int x, int y)
 {
     int new_player_x = _player.pos_x + x;
@@ -147,8 +136,9 @@ int Pacman::move_player(int x, int y)
         if (_player._interract == false) {
             _player.getDammage();
             config_file.clear();
+            ennemies_list.clear();
             config_file = readSceneFile();
-            restartEnnemies();
+            std::cout << "I DIE" << std::endl;
             return 0;
         } else if (_player._interract == true) {
             // ENNEMIES GET DAMAGE
