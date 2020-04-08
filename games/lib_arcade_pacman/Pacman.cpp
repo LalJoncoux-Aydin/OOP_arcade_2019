@@ -278,6 +278,7 @@ void Pacman::ia_ennemy()
     }
 }
 
+
 void Pacman::writeHighScore(int score, std::string name, int id)
 {
     std::string newline;
