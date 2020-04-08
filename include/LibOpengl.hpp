@@ -37,7 +37,7 @@ class LibOpengl: public IGraphic
         bool drawMap(char _letter, int x, int y);
         virtual bool drawPlayer(int x, int y, int id);
         virtual bool drawObject(int x, int y);
-        virtual bool drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list);
+        virtual bool drawEnemies(int x, int y, std::vector<Ennemies> ennemies_list, int ennemie_x, int ennemie_y);
         virtual void displayLoose();
         virtual bool displayBody(int x, int y);
       /*  virtual void playMusic(void);

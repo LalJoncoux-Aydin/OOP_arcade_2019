@@ -42,6 +42,7 @@ class Pacman: public IGames {
         virtual void ia_ennemy();
         void move_ennemy(int i);
         void restartEnnemies();
+
         // Getters
         virtual void *getLibPtr() {
             return _lib_ptr;
@@ -61,9 +62,11 @@ class Pacman: public IGames {
         virtual Player getPlayer() {
             return _player;
         };
-
         virtual std::vector<Ennemies> getEnnemiesList() {
             return ennemies_list;
+        };
+        virtual int getPv() {
+            return 5;
         };
 
         // Setters

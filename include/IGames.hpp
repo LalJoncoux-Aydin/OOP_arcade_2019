@@ -37,6 +37,7 @@ class IGames {
         virtual std::vector<std::string> getConfigFile() = 0;
         virtual Player getPlayer() = 0;
         virtual std::vector<Ennemies> getEnnemiesList() = 0;
+        virtual int getPv() = 0;
 
         // Setters
         virtual void setLibPtr(void * new_lib) = 0;

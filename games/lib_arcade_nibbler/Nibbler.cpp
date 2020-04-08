@@ -21,6 +21,7 @@ std::vector<std::string> Nibbler::readSceneFile()
                     if (newline[z] == 'P') {
                         _player.pos_x = x - 1;
                         _player.pos_y = y;
+                        _player._pv = 1;
                     }
                     if (newline[z] == 'E') {
                         throw uncorrectMap();
@@ -81,7 +82,7 @@ int Nibbler::move_player(int x, int y)
     size_t randomX = rand()%(31-4 + 1) + 4;
     size_t randomY = rand()%(90 + 1);
 
-    if (config_file[new_player_x][new_player_y] != ' ' && config_file[new_player_x][new_player_y] != '/' && config_file[new_player_x][new_player_y] != 'O') {
+    if (config_file[new_player_x][new_player_y] != ' ' && config_file[new_player_x][new_player_y] != 'O') {
         _player.getDammage();
         return 0;
     }
@@ -116,8 +117,10 @@ int Nibbler::move_player(int x, int y)
         config_file[pos_x][pos_y] = ' ';
 
     } else if (config_file[new_player_x][new_player_y] == 'O') {
-        while (randomY > config_file[_player.pos_x].size() || (randomY < config_file[_player.pos_x].size() && config_file[_player.pos_x][randomY] != ' ')) {
-            randomX = rand()%(31-4 + 1) + 4;
+        randomX = rand()%(29-4 + 1) + 4;
+        randomY = rand()%(90 + 1);
+        while (config_file[randomX][randomY] != ' ') {
+            randomX = rand()%(29-4 + 1) + 4;
             randomY = rand()%(90 + 1);
         }
         config_file[randomX][randomY] = 'O';
@@ -167,6 +170,8 @@ void Nibbler::writeHighScore(int score, std::string name, int id)
     config_file.clear();
     _player.setPv(1);
     _player.setScore(0);
+    _player.setDirectionX(0);
+    _player.setDirectionY(0);
 }
 
 extern "C" IGames *createGame(void)

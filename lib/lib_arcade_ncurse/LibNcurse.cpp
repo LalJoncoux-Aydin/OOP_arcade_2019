@@ -31,7 +31,6 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene, __attribute_
 {
     int x = 65;
     int y = 10;
-    int nb_ennemies = 0;
 
     clear();
     for(size_t i = 0; i < config_scene.size(); i++) {
@@ -64,9 +63,8 @@ bool LibNcurse::displayScene(std::vector<std::string> config_scene, __attribute_
                     if (drawObject(x, y) == false)
                         return false;
                 } else if(l_command[z] == "E") {
-                    if (drawEnemies(x, y, nb_ennemies, ennemies_list) == false)
+                    if (drawEnemies(x, y, ennemies_list, i, z) == false)
                         return false;
-                    nb_ennemies += 1;
                 } else if (l_command[z] != " " && l_command[z] != "@") {
                     if (drawMap(x, y) == false)
                         return false;
@@ -137,24 +135,49 @@ bool LibNcurse::drawObject(int x, int y) {
     return true;
 }
 
-bool LibNcurse::drawEnemies(int x, int y, int index, std::vector<Ennemies> ennemies_list)
+bool LibNcurse::drawEnemies(int x, int y, std::vector<Ennemies> ennemies_list, int ennemie_x, int ennemie_y)
 {
+    for (size_t i = 0; i < ennemies_list.size(); i++) {
+        if ((ennemies_list[i].pos_x == ennemie_x && ennemies_list[i].pos_y == ennemie_y * 2) ||
+            (ennemies_list[i].home_x == ennemie_x && ennemies_list[i].home_y == ennemie_y * 2))    {
+
+            if (i == 0) {
+                start_color();
+                init_pair(2, COLOR_RED, COLOR_BLACK);
+                refresh();
+                attron(COLOR_PAIR(2));
+                refresh();
+                mvprintw(y, x, "E");
+            }
+            if (i == 1) {
+                start_color();
+                init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
+                refresh();
+                attron(COLOR_PAIR(3));
+                refresh();
+                mvprintw(y, x, "E");
+            }
+            if (i == 2) {
+                start_color();
+                init_pair(4, COLOR_CYAN, COLOR_BLACK);
+                refresh();
+                attron(COLOR_PAIR(4));
+                refresh();
+                mvprintw(y, x, "E");
+            }
+            if (i == 3) {
+                start_color();
+                init_pair(5, COLOR_YELLOW, COLOR_BLACK);
+                refresh();
+                attron(COLOR_PAIR(5));
+                refresh();
+                mvprintw(y, x, "E");
+            }
+        }
+    }
     start_color();
     init_pair(1, COLOR_WHITE, COLOR_BLACK);
-    init_pair(2, COLOR_RED, COLOR_BLACK);
-    init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
-    init_pair(4, COLOR_CYAN, COLOR_BLACK);
-    init_pair(5, COLOR_YELLOW, COLOR_BLACK);
     refresh();
-    if (index == 0)
-        attron(COLOR_PAIR(2));
-    if (index == 1)
-        attron(COLOR_PAIR(3));
-    if (index == 2)
-        attron(COLOR_PAIR(4));
-    if (index == 3)
-        attron(COLOR_PAIR(5));
-    mvprintw(y, x, "E");
     attron(COLOR_PAIR(1));
     attron(A_NORMAL);
     refresh();

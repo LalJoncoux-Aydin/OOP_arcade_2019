@@ -52,6 +52,9 @@ class Menu: public IGames {
         virtual Player getPlayer() {
             return _player;
         };
+        virtual int getPv() {
+            return 0;
+        };
 
         virtual std::vector<Ennemies>getEnnemiesList() {
             return _ennemies_list;

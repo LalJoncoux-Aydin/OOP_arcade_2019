@@ -20,7 +20,7 @@ class Player {
         int _directionX = 0;
         int _directionY = 0;
         int _score = 0;
-        int _pv = 1;
+        int _pv;
         bool _interract = false;
 
         void getDammage() {
